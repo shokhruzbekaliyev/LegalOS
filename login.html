@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalOS Uzbekistan — Avtorizatsiya va Tizimga Kirish</title>
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets (Blue, White, Green) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+<div class="auth-container">
+  
+  <!-- Left Hero Pane -->
+  <aside class="auth-hero-pane">
+    <div class="auth-hero-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon" style="width: 44px; height: 44px; background: linear-gradient(135deg, #2563eb, #10b981);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title" style="font-size: 1.45rem;">Legal<span>OS</span></span>
+          <span class="logo-subtitle" style="font-size: 0.75rem;">O‘zbekiston LegalTech • AI</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="auth-hero-body">
+      <div class="hero-tagline-badge">
+        <span>✓ 100% Lex.uz bilan sinxronlangan</span>
+      </div>
+      <h1 class="auth-hero-title">
+        O‘zbekiston uchun to‘liq <span>yuridik operatsion tizim</span>.
+      </h1>
+      <p class="auth-hero-desc">
+        Savoldan — hujjatga. Hujjatdan — case’ga. Case’dan — proaktiv compliance va real yuristgacha bo‘lgan barcha huquqiy jarayonlar bir joyda.
+      </p>
+
+      <div class="hero-feature-list">
+        <div class="hero-feature-item">
+          <div class="hero-check-icon">✓</div>
+          <span><strong>AI Legal Core:</strong> 10 ta ixtisoslashgan agent va rasmiy manba tekshiruvchisi (Verifier).</span>
+        </div>
+        <div class="hero-feature-item">
+          <div class="hero-check-icon">✓</div>
+          <span><strong>Contract Intelligence:</strong> Shartnomalarni o‘qish, xavflarni tahlil qilish va Redline diff.</span>
+        </div>
+        <div class="hero-feature-item">
+          <div class="hero-check-icon">✓</div>
+          <span><strong>Court Strategy Simulator:</strong> Your Lawyer AI vs Opponent AI vs Judge AI stress-test.</span>
+        </div>
+        <div class="hero-feature-item">
+          <div class="hero-check-icon">✓</div>
+          <span><strong>Legal Time Machine:</strong> Qonunning aynan nizo yuz bergan sanadagi tarixiy tahriri.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-hero-footer">
+      <span>© 2026 LegalOS Uzbekistan. Barcha huquqlar himoyalangan.</span>
+      <span style="color: #34d399; font-weight: 600;">Status: Tizim faol</span>
+    </div>
+  </aside>
+
+  <!-- Right Form Pane -->
+  <main class="auth-form-pane">
+    <div class="auth-form-wrapper">
+      
+      <div class="auth-form-header">
+        <h2 id="auth-main-title">Tizimga Kirish</h2>
+        <p>Iltimos, o‘z profilingizga mos rolni tanlang va kabinetga o‘ting.</p>
+      </div>
+
+      <!-- Quick 1-Click Demo Box -->
+      <div class="quick-demo-strip">
+        <div class="quick-demo-title">
+          <span>⚡ Tezkor 1-Click Test Kirish (Demo):</span>
+        </div>
+        <div class="quick-demo-buttons">
+          <button type="button" class="btn-demo-role" onclick="quickLogin('CITIZEN', 'citizen.html')">
+            👤 Fuqaro
+          </button>
+          <button type="button" class="btn-demo-role" onclick="quickLogin('LAWYER', 'lawyer.html')">
+            ⚖️ Yurist
+          </button>
+          <button type="button" class="btn-demo-role" onclick="quickLogin('ORG_MEMBER', 'business.html')">
+            🏢 Biznes
+          </button>
+          <button type="button" class="btn-demo-role" onclick="quickLogin('ORG_ADMIN', 'admin.html')">
+            🛡️ Admin
+          </button>
+        </div>
+      </div>
+
+      <!-- OneID Button -->
+      <button type="button" class="btn-oneid" onclick="quickLogin(currentSelectedRole, getRoleRedirectUrl(currentSelectedRole))">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
+        <span>OneID orqali identifikatsiya bilan kirish</span>
+      </button>
+
+      <div class="divider-line">yoki login va parol orqali</div>
+
+      <!-- Role Selector Cards -->
+      <div class="role-select-label">
+        <span>Foydalanuvchi Roli:</span>
+        <span style="font-size: 0.72rem; color: #2563eb; text-transform: none;">Alohida kabinetga yo‘naltiriladi</span>
+      </div>
+
+      <div class="role-cards-grid" id="role-cards-selector">
+        <!-- 1. Citizen -->
+        <div class="role-option-card" data-role="CITIZEN" onclick="selectRole('CITIZEN')">
+          <div class="role-option-title">
+            <span>👤</span> Fuqaro (Citizen)
+          </div>
+          <div class="role-option-desc">
+            Oddiy huquqiy savollar, shablon arizalar va yurist topish
+          </div>
+        </div>
+
+        <!-- 2. Lawyer -->
+        <div class="role-option-card" data-role="LAWYER" onclick="selectRole('LAWYER')">
+          <div class="role-option-title">
+            <span>⚖️</span> Yurist (Lawyer)
+          </div>
+          <div class="role-option-desc">
+            Sud ishlari, strategiya simulyatori va mijozlar hisobi
+          </div>
+        </div>
+
+        <!-- 3. Business -->
+        <div class="role-option-card" data-role="ORG_MEMBER" onclick="selectRole('ORG_MEMBER')">
+          <div class="role-option-title">
+            <span>🏢</span> Biznes / Xodim
+          </div>
+          <div class="role-option-desc">
+            Shartnomalar tahlili, Redline va proaktiv compliance
+          </div>
+        </div>
+
+        <!-- 4. Admin -->
+        <div class="role-option-card selected" data-role="ORG_ADMIN" onclick="selectRole('ORG_ADMIN')">
+          <div class="role-option-title">
+            <span>🛡️</span> Kompaniya Admini
+          </div>
+          <div class="role-option-desc">
+            Jamoa ruxsatnomalari (RBAC), audit va tizim boshqaruvi
+          </div>
+        </div>
+      </div>
+
+      <!-- Credentials Form -->
+      <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+        <div class="form-group">
+          <label for="input-email">Elektron pochta yoki Telefon raqami:</label>
+          <input type="text" id="input-email" class="form-input-box" placeholder="masalan: user@legalos.uz yoki +998 90 123 45 67" required value="admin@abctextile.uz" />
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="input-password">Parol:</label>
+            <a href="#" style="font-size: 0.78rem; color: #2563eb;" onclick="alert('Parolni tiklash havolasi emailingizga yuborildi'); return false;">Parolni unutdingizmi?</a>
+          </div>
+          <input type="password" id="input-password" class="form-input-box" placeholder="••••••••••••" required value="SecretLegalOS2026!" />
+        </div>
+
+        <button type="submit" class="btn-submit-auth" id="btn-submit">
+          <span>Kabinetga Kirish</span> →
+        </button>
+      </form>
+
+      <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--color-text-muted);">
+        <span>Hisobingiz yo‘qmi? </span>
+        <a href="#" style="color: #2563eb; font-weight: 600;" onclick="toggleAuthMode(); return false;" id="auth-toggle-link">
+          Ro‘yxatdan o‘tish
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  let currentSelectedRole = 'ORG_ADMIN';
+  let isRegisterMode = false;
+
+  const roleRedirectMap = {
+    'CITIZEN': 'citizen.html',
+    'LAWYER': 'lawyer.html',
+    'ORG_MEMBER': 'business.html',
+    'ORG_ADMIN': 'admin.html'
+  };
+
+  const defaultUserNames = {
+    'CITIZEN': 'Otabek Fayzullayev',
+    'LAWYER': 'Sardor Rahimov (Advokat)',
+    'ORG_MEMBER': 'Malika Saidova (HR Boshlig‘i)',
+    'ORG_ADMIN': 'Azamat Usmonov (Bosh Yurist)'
+  };
+
+  function getRoleRedirectUrl(role) {
+    return roleRedirectMap[role] || 'citizen.html';
+  }
+
+  function selectRole(role) {
+    currentSelectedRole = role;
+    const cards = document.querySelectorAll('.role-option-card');
+    cards.forEach(card => {
+      if (card.dataset.role === role) {
+        card.classList.add('selected');
+      } else {
+        card.classList.remove('selected');
+      }
+    });
+
+    // Update email placeholder based on role
+    const emailInput = document.getElementById('input-email');
+    if (role === 'CITIZEN') {
+      emailInput.value = 'otabek@gmail.com';
+    } else if (role === 'LAWYER') {
+      emailInput.value = 'sardor.lawyer@barrister.uz';
+    } else if (role === 'ORG_MEMBER') {
+      emailInput.value = 'malika.hr@abctextile.uz';
+    } else if (role === 'ORG_ADMIN') {
+      emailInput.value = 'azamat.admin@abctextile.uz';
+    }
+  }
+
+  function quickLogin(role, targetUrl) {
+    sessionStorage.setItem('legalos_role', role);
+    sessionStorage.setItem('legalos_username', defaultUserNames[role]);
+    sessionStorage.setItem('legalos_is_authenticated', 'true');
+    window.location.href = targetUrl;
+  }
+
+  function handleAuthSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('input-email').value;
+    const targetUrl = getRoleRedirectUrl(currentSelectedRole);
+    
+    sessionStorage.setItem('legalos_role', currentSelectedRole);
+    sessionStorage.setItem('legalos_email', email);
+    sessionStorage.setItem('legalos_username', defaultUserNames[currentSelectedRole] || email.split('@')[0]);
+    sessionStorage.setItem('legalos_is_authenticated', 'true');
+    
+    window.location.href = targetUrl;
+  }
+
+  function toggleAuthMode() {
+    isRegisterMode = !isRegisterMode;
+    const title = document.getElementById('auth-main-title');
+    const btn = document.getElementById('btn-submit');
+    const toggleLink = document.getElementById('auth-toggle-link');
+
+    if (isRegisterMode) {
+      title.textContent = "Ro‘yxatdan O‘tish";
+      btn.innerHTML = "<span>Ro‘yxatdan O‘tish va Boshlash</span> →";
+      toggleLink.textContent = "Tizimga kirish";
+    } else {
+      title.textContent = "Tizimga Kirish";
+      btn.innerHTML = "<span>Kabinetga Kirish</span> →";
+      toggleLink.textContent = "Ro‘yxatdan o‘tish";
+    }
+  }
+</script>
+
+</body>
+</html>

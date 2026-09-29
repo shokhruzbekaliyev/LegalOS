@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalOS — Fuqaro Kabineti (Citizen Portal)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  
+  <!-- Header for Citizen Portal -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="citizen.html" class="brand-logo">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #2563eb, #10b981);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">Legal<span>OS</span></span>
+          <span class="logo-subtitle">Fuqaro Portali (Citizen)</span>
+        </div>
+      </a>
+
+      <div class="header-search" style="width: 320px;">
+        <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" placeholder="Qonuniy savolingizni yozing..." />
+      </div>
+    </div>
+
+    <div class="header-right">
+      <span class="status-pill">
+        <span class="status-dot-pulse"></span>
+        <span>Lex.uz RAG: Faol</span>
+      </span>
+
+      <div class="user-profile-menu">
+        <div class="user-avatar" style="background: linear-gradient(135deg, #3b82f6, #0284c7);">OF</div>
+        <div class="user-info">
+          <span class="user-name">Otabek Fayzullayev</span>
+          <span class="user-role-label">👤 CITIZEN • Oddiy fuqaro</span>
+        </div>
+      </div>
+
+      <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Chiqish
+      </a>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-section-title">Fuqaro Xizmatlari</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <button class="nav-item-btn active" onclick="switchCitizenTab('chat', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Huquqiy AI Yordamchi
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchCitizenTab('templates', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                Tayyor Ariza va Shablonlar
+              </span>
+              <span class="nav-badge-count">12 ta</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchCitizenTab('lawyers', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Real Yurist Topish
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchCitizenTab('history', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                Mening Hujjatlarim
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Free Credits Status Widget -->
+      <div class="sidebar-agent-widget" style="background: #f0fdf4; border-color: #a7f3d0;">
+        <div style="font-weight: 700; font-size: 0.82rem; color: #065f46; margin-bottom: 4px;">Free Rejim (Bepul)</div>
+        <p style="font-size: 0.75rem; color: #047857; line-height: 1.4;">
+          Sizda <strong>15 ta</strong> bepul savol va ariza generatsiyasi mavjud.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      
+      <!-- TAB 1: Citizen Legal AI Chat -->
+      <section class="citizen-tab-pane" id="pane-chat">
+        <div class="chat-view-layout">
+          <div class="chat-header-bar">
+            <div>
+              <h3 style="font-size: 1.05rem; color: #0f172a;">Fuqarolar uchun Huquqiy AI Maslahatchi</h3>
+              <p style="font-size: 0.8rem; color: #64748b;">Oddiy tilda tushuntiradi, qonun moddalariga asoslanadi.</p>
+            </div>
+            <span class="badge badge-green">Zero-Hallucination</span>
+          </div>
+
+          <div class="chat-messages-container" id="citizen-chat-box">
+            <div class="message-row assistant">
+              <div class="message-avatar" style="background: linear-gradient(135deg, #2563eb, #10b981); color: white;">AI</div>
+              <div class="message-bubble">
+                <div class="message-meta">
+                  <span class="message-sender">LegalOS Fuqaro Yordamchisi</span>
+                  <span style="color: #64748b; font-size: 0.72rem;">Bugun</span>
+                </div>
+                <div style="font-size: 0.93rem; color: #1e293b;">
+                  Assalomu alaykum, Otabek! Men O‘zbekiston qonunchiligi bo‘yicha sizning bepul huquqiy yordamchingizman. 
+                  Oilaviy munosabatlar, mehnat huquqi, meros, kredit yoki iste’molchilar huquqlari bo‘yicha qanday savolingiz bor?
+                </div>
+                <div class="verifier-seal">
+                  <div class="verifier-seal-left">
+                    <div class="verifier-icon-badge">✓</div>
+                    <div>
+                      <div class="verifier-title">Lex.uz bazasi bilan tasdiqlanadi</div>
+                      <div class="verifier-subtitle">Fuqarolik va Mehnat kodekslari tahrirlari</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="chat-suggestion-chips">
+              <button class="suggestion-chip" onclick="askCitizenPrompt('Ish beruvchi 2 oydan beri oyligimni bermayapti, qayerga shikoyat qilsam bo‘ladi?')">
+                💼 Oylik maosh kechikishi
+              </button>
+              <button class="suggestion-chip" onclick="askCitizenPrompt('Do‘kondan olgan maishiy texnikam buzuq chiqdi, pulimni qanday qaytarib olaman?')">
+                🛍️ Iste’molchi huquqi va tovar qaytarish
+              </button>
+              <button class="suggestion-chip" onclick="askCitizenPrompt('Meros taqsimotida kimlar birinchi navbatdagi merosxo‘r hisoblanadi?')">
+                📜 Meros va vasiyatnoma
+              </button>
+            </div>
+            <form class="chat-form" onsubmit="event.preventDefault(); submitCitizenChat();">
+              <input type="text" class="chat-input-field" id="citizen-input" placeholder="Huquqiy savolingizni oddiy so‘zlar bilan yozing..." />
+              <button type="submit" class="btn btn-primary">Yuborish</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Templates & Documents Generator -->
+      <section class="citizen-tab-pane" id="pane-templates" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h2>Tayyor Ariza va Shablonlar Generatori</h2>
+          <p>Bir necha savolga javob bering — LegalOS avtomatik ravishda tayyor huquqiy ariza matnini shakllantiradi.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px;">
+          <div class="card" style="padding: 20px;">
+            <span class="badge badge-blue">Mehnat Nizolari</span>
+            <h3 style="margin-top: 10px; font-size: 1.05rem;">Oylik maoshni undirish haqida ariza</h3>
+            <p style="font-size: 0.85rem; margin-top: 6px;">Davlat mehnat inspeksiyasiga yoki tuman sudiga taqdim etish uchun.</p>
+            <button class="btn btn-primary btn-sm" style="margin-top: 14px; width: 100%;" onclick="UIComponents.showToast('Ariza shabloni tayyorlandi (DOCX)', 'success')">
+              Arizani To‘ldirish ➔
+            </button>
+          </div>
+
+          <div class="card" style="padding: 20px;">
+            <span class="badge badge-green">Iste'molchi Huquqi</span>
+            <h3 style="margin-top: 10px; font-size: 1.05rem;">Sifatsiz tovar uchun pulni qaytarish talabnomasi</h3>
+            <p style="font-size: 0.85rem; margin-top: 6px;">Do‘kon yoki servis markaziga rasmiy e’tiroz xati (pretenziya).</p>
+            <button class="btn btn-primary btn-sm" style="margin-top: 14px; width: 100%;" onclick="UIComponents.showToast('Talabnoma shabloni tayyorlandi', 'success')">
+              Arizani To‘ldirish ➔
+            </button>
+          </div>
+
+          <div class="card" style="padding: 20px;">
+            <span class="badge badge-warning">Sud Ishlari</span>
+            <h3 style="margin-top: 10px; font-size: 1.05rem;">Qarz tilxati bo‘yicha sud buyrug‘i arizasi</h3>
+            <p style="font-size: 0.85rem; margin-top: 6px;">Fuqarolik ishlari bo‘yicha tumanlararo sudga qarzni soddalashtirilgan undirish.</p>
+            <button class="btn btn-primary btn-sm" style="margin-top: 14px; width: 100%;" onclick="UIComponents.showToast('Sud buyrug‘i arizasi tayyorlandi', 'success')">
+              Arizani To‘ldirish ➔
+            </button>
+          </div>
+
+          <div class="card" style="padding: 20px;">
+            <span class="badge badge-blue">Uy-joy</span>
+            <h3 style="margin-top: 10px; font-size: 1.05rem;">Xonadon ijara shartnomasi (Standart)</h3>
+            <p style="font-size: 0.85rem; margin-top: 6px;">Ijara oluvchi va beruvchi o‘rtasida Soliq bazasi talablariga mos shartnoma.</p>
+            <button class="btn btn-primary btn-sm" style="margin-top: 14px; width: 100%;" onclick="UIComponents.showToast('Standart ijara shartnomasi yuklandi', 'success')">
+              Arizani To‘ldirish ➔
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: Find Lawyers -->
+      <section class="citizen-tab-pane" id="pane-lawyers" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h2>Professional Yurist Topish va Bog‘lanish</h2>
+          <p>Agar sizga sudga vakil yoki yozma xulosa kerak bo‘lsa, tajribali mutaxassisni tanlang.</p>
+        </div>
+        <div class="lawyer-grid" id="citizen-lawyers-list">
+          <!-- Populated by script -->
+        </div>
+      </section>
+
+      <!-- TAB 4: History -->
+      <section class="citizen-tab-pane" id="pane-history" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h2>Mening Hujjatlarim va Yozishmalarim</h2>
+          <p>Siz shakllantirgan arizalar va AI maslahatlari arxivi.</p>
+        </div>
+        <div class="card">
+          <table class="compliance-matrix-table">
+            <thead>
+              <tr>
+                <th>Hujjat Nomi</th>
+                <th>Sana</th>
+                <th>Holat</th>
+                <th>Harakat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mehnat inspeksiyasiga shikoyat arizasi.docx</strong></td>
+                <td>2026-09-27</td>
+                <td><span class="badge badge-green">Yuklab olingan</span></td>
+                <td><button class="btn btn-secondary btn-sm" onclick="alert('Fayl qayta yuklandi')">Yuklab olish</button></td>
+              </tr>
+              <tr>
+                <td><strong>Sifatsiz smartfon bo‘yicha talabnoma xati.pdf</strong></td>
+                <td>2026-09-24</td>
+                <td><span class="badge badge-blue">Yuborilgan</span></td>
+                <td><button class="btn btn-secondary btn-sm" onclick="alert('Fayl qayta yuklandi')">Yuklab olish</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  function switchCitizenTab(tabName, btn) {
+    document.querySelectorAll('.citizen-tab-pane').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.app-sidebar .nav-item-btn').forEach(el => el.classList.remove('active'));
+    
+    const target = document.getElementById('pane-' + tabName);
+    if (target) target.style.display = 'block';
+    if (btn) btn.classList.add('active');
+
+    if (tabName === 'lawyers') {
+      renderCitizenLawyers();
+    }
+  }
+
+  function renderCitizenLawyers() {
+    const list = document.getElementById('citizen-lawyers-list');
+    if (!list) return;
+    list.innerHTML = LegalData.lawyers.map(lawyer => `
+      <div class="lawyer-card">
+        <div class="lawyer-card-top">
+          <div class="lawyer-portrait">${lawyer.name.split(' ').map(n=>n[0]).join('')}</div>
+          <div>
+            <div style="font-weight: 700; font-size: 1.05rem;">${lawyer.name}</div>
+            <div style="font-size: 0.82rem; color: #2563eb; font-weight: 600;">${lawyer.title}</div>
+            <div style="font-size: 0.78rem; color: #64748b;">📍 ${lawyer.region}</div>
+          </div>
+        </div>
+        <div style="font-size: 0.85rem; color: #334155; margin-top: 8px;">
+          Mutaxassislik: ${lawyer.specialty}<br>
+          Narx: <strong style="color: #059669;">${lawyer.price}</strong>
+        </div>
+        <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;" onclick="UIComponents.showToast('${lawyer.name} bilan konsultatsiya bron qilindi!', 'success')">
+          Konsultatsiya Belgilash ➔
+        </button>
+      </div>
+    `).join('');
+  }
+
+  function askCitizenPrompt(text) {
+    const input = document.getElementById('citizen-input');
+    if (input) {
+      input.value = text;
+      submitCitizenChat();
+    }
+  }
+
+  function submitCitizenChat() {
+    const input = document.getElementById('citizen-input');
+    const text = input.value.trim();
+    if (!text) return;
+    
+    const box = document.getElementById('citizen-chat-box');
+    
+    // User message
+    box.innerHTML += `
+      <div class="message-row user">
+        <div class="message-avatar">Siz</div>
+        <div class="message-bubble" style="background: linear-gradient(135deg, #1d4ed8, #1e40af); color: white;">
+          ${text}
+        </div>
+      </div>
+    `;
+    input.value = '';
+    box.scrollTop = box.scrollHeight;
+
+    // AI response simulation
+    setTimeout(() => {
+      box.innerHTML += `
+        <div class="message-row assistant">
+          <div class="message-avatar" style="background: linear-gradient(135deg, #2563eb, #10b981); color: white;">AI</div>
+          <div class="message-bubble">
+            <div class="message-meta">
+              <span class="message-sender">LegalOS Fuqaro Maslahatchisi</span>
+              <span style="font-size: 0.72rem; color: #64748b;">Hozirgina</span>
+            </div>
+            <div style="font-size: 0.93rem; color: #1e293b; line-height: 1.6;">
+              O‘zbekiston Respublikasi Mehnat Kodeksiga muvofiq, ish beruvchi oylik maoshni o‘z vaqtida to‘lashga majbur. Kechiktirilgan har bir kun uchun kompensatsiya to‘lanishi shart.
+              <br><br>
+              <strong>Sizning harakatlaringiz:</strong>
+              1. Davlat mehnat inspeksiyasiga onlayn ariza yuborish.
+              2. Sudga da’vo arizasi kiritish (bizdagi tayyor shablon orqali).
+            </div>
+            <div class="verifier-seal">
+              <div class="verifier-seal-left">
+                <div class="verifier-icon-badge">✓</div>
+                <div>
+                  <div class="verifier-title">Lex.uz tasdiqlangan norma</div>
+                  <div class="verifier-subtitle">MK 253-modda bo‘yicha tekshirildi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
+    }, 700);
+  }
+</script>
+
+</body>
+</html>

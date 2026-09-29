@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalOS — Biznes & Shartnomalar Portali (Business)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  
+  <!-- Proactive Compliance Banner -->
+  <aside class="compliance-banner">
+    <div class="compliance-banner-content">
+      <span class="banner-alert-tag">Proaktiv Alert</span>
+      <span class="banner-text">
+        <strong>Soliq qonunchiligida o‘zgarish aniqlandi:</strong>
+        <span class="banner-impact-preview">Kompaniyangizdagi 14 ta shartnoma va 3 ta HR shabloniga ta’sir qiladi</span>
+      </span>
+    </div>
+    <button class="banner-btn-review" onclick="switchBusinessTab('compliance')">
+      Ta’sirlarni Ko‘rish →
+    </button>
+  </aside>
+
+  <!-- Header for Business Portal -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="business.html" class="brand-logo">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #059669, #10b981);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">Legal<span>OS</span></span>
+          <span class="logo-subtitle">Biznes & Shartnomalar (Business)</span>
+        </div>
+      </a>
+
+      <div class="header-search" style="width: 360px;">
+        <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" placeholder="Shartnomalar, ichki siyosatlar yoki xavflarni qidirish..." />
+      </div>
+    </div>
+
+    <div class="header-right">
+      <span class="status-pill">
+        <span class="status-dot-pulse"></span>
+        <span>ABC Textile MCHJ: Himoyalangan</span>
+      </span>
+
+      <div class="user-profile-menu">
+        <div class="user-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">MS</div>
+        <div class="user-info">
+          <span class="user-name">Malika Saidova</span>
+          <span class="user-role-label">🏢 ORG_MEMBER • HR Boshlig‘i</span>
+        </div>
+      </div>
+
+      <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Chiqish
+      </a>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-section-title">Kompaniya Ish Paneli</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <button class="nav-item-btn active" onclick="switchBusinessTab('contracts', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                Contract Intelligence
+              </span>
+              <span class="nav-badge-count danger">1 Risk</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchBusinessTab('compliance', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                Proaktiv Compliance
+              </span>
+              <span class="nav-badge-count danger">Alert</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchBusinessTab('internal_rag', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Kompaniya Ichki Siyosatlari
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Company Policy Info -->
+      <div class="sidebar-agent-widget" style="background: #f0fdf4; border-color: #a7f3d0;">
+        <div style="font-size: 0.78rem; font-weight: 700; color: #065f46;">ABC Textile Ichki Bazasi</div>
+        <p style="font-size: 0.74rem; color: #047857; margin-top: 4px;">
+          148 ta shartnoma, 12 ta HR buyrug‘i va Buxgalteriya siyosati indekslangan.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      
+      <!-- TAB 1: Contract Intelligence & Redline -->
+      <section class="business-tab-pane" id="bpane-contracts">
+        <div class="contract-toolbar" style="margin-bottom: 16px;">
+          <div>
+            <h2 style="font-size: 1.25rem;">Contract Intelligence & Redline Tahlili</h2>
+            <p style="font-size: 0.82rem;">Hujjat: <strong>Axborot-texnologiyalari xizmatlari shartnomasi #42-UZ</strong></p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Yangi shartnoma yuklandi', 'info')">
+              + Yangi Shartnoma Yuklash
+            </button>
+            <button class="btn btn-primary btn-sm" onclick="UIComponents.showToast('Muvofiqlashtirilgan DOCX yuklab olindi', 'success')">
+              DOCX Yuklab Olish
+            </button>
+          </div>
+        </div>
+
+        <div class="contract-view-layout">
+          <!-- Clause Navigation Sidebar -->
+          <div class="clause-nav-sidebar">
+            <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Bandlar Ro‘yxati</div>
+            <div class="clause-item">
+              <span>1. Shartnoma predmeti</span>
+              <span class="badge badge-green">Xavfsiz</span>
+            </div>
+            <div class="clause-item">
+              <span>2. Xizmatlar qiymati</span>
+              <span class="badge badge-green">Xavfsiz</span>
+            </div>
+            <div class="clause-item has-risk active">
+              <span>8.3. Javobgarlik</span>
+              <span class="badge badge-danger">1 HIGH RISK</span>
+            </div>
+            <div class="clause-item">
+              <span>9. Fors-major</span>
+              <span class="badge badge-green">Xavfsiz</span>
+            </div>
+            <div class="clause-item">
+              <span>11. Maxfiylik</span>
+              <span class="badge badge-green">Xavfsiz</span>
+            </div>
+          </div>
+
+          <!-- Main Redline Workspace -->
+          <div class="contract-main-editor">
+            <div class="risk-alert-card" id="b-risk-card">
+              <div class="risk-card-header">
+                <div class="risk-card-title">
+                  ⚠️ 8.3-band — Bir tomonlama nomutanosib javobgarlik
+                </div>
+                <span class="badge badge-danger">HIGH RISK</span>
+              </div>
+              <p style="color: #475569; font-size: 0.9rem;">
+                Band majburiyat va kompensatsiya yukini asosan bir tomonga yuklaydi. Bajaruvchi uchun esa hech qanday javobgarlik nazarda tutilmagan.
+              </p>
+              <div>
+                <span class="legal-citation">FK 333-modda</span>
+                <span style="font-size: 0.85rem; color: #64748b; margin-left: 6px;">Tadbirkorlik faoliyatida teng javobgarlik tamoyili</span>
+              </div>
+
+              <div class="diff-container" style="margin-top: 8px;">
+                Agar Tomonlardan biri majburiyatini bajarmasa, 
+                <del class="diff-del">Bajaruvchi shartnomani darhol bekor qilishga va 50 foiz jarima undirishga haqli</del>
+                <ins class="diff-ins">+ har bir kechiktirilgan kun uchun 0.1% miqdorida penya to‘laydi, biroq umumiy summa 10% idan oshmasligi shart. Teng javobgarlik choralari qo‘llaniladi</ins>.
+              </div>
+
+              <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 12px;">
+                <button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Tahrir rad etildi', 'info')">Rad etish</button>
+                <button class="btn btn-success" onclick="acceptBusinessRedline()">
+                  ✓ Tahrirni Qabul Qilish (Accept Change)
+                </button>
+              </div>
+            </div>
+
+            <div class="split-diff-preview">
+              <h4 style="margin-bottom: 8px;">Shartnomaning Amaldagi Matni</h4>
+              <p style="font-size: 0.92rem; color: #334155; line-height: 1.7;" id="b-contract-text">
+                <strong>8.3-band:</strong> Agar Buyurtmachi to‘lovni 1 (bir) kun kechiktirsa, Bajaruvchi shartnomani darhol bir tomonlama bekor qilishga va Buyurtmachidan shartnoma umumiy summasining 50 foizi miqdorida jarima hamda barcha yetkazilgan zararlarni to‘liq qoplashni talab qilishga haqli. Bajaruvchi tomonidan xizmatlar kechiktirilganda esa hech qanday jarima qo‘llanilmaydi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Proactive Compliance -->
+      <section class="business-tab-pane" id="bpane-compliance" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h2>Proaktiv Compliance Monitoring</h2>
+            <p>Lex.uz bazasidagi o‘zgarishlarning kompaniya faoliyatiga ta’sirini tahlil qilish.</p>
+          </div>
+          <button class="btn btn-success" onclick="UIComponents.showToast('Barcha shartnomalar soliq talablariga moslashtirildi', 'success')">
+            Barchasini Avto-Tuzatish
+          </button>
+        </div>
+
+        <table class="compliance-matrix-table">
+          <thead>
+            <tr>
+              <th>Ta’sirlangan Shartnoma / Hujjat</th>
+              <th>Turi</th>
+              <th>Xavf</th>
+              <th>Zaruriy Amal</th>
+              <th>Harakat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Axborot xizmatlari shartnomasi #42</strong></td>
+              <td>Tashqi Shartnoma</td>
+              <td><span class="badge badge-warning">O‘rtacha</span></td>
+              <td>EHF rekviziti qo‘shish</td>
+              <td><button class="btn btn-secondary btn-sm" onclick="switchBusinessTab('contracts')">Ochish</button></td>
+            </tr>
+            <tr>
+              <td><strong>Bosh ofis ijara shartnomasi</strong></td>
+              <td>Ijara Shartnomasi</td>
+              <td><span class="badge badge-warning">O‘rtacha</span></td>
+              <td>Fiskal modul kiritish</td>
+              <td><button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Ijara shartnomasi muvofiqlashtirildi', 'success')">Tuzatish</button></td>
+            </tr>
+            <tr>
+              <td><strong>Kompaniya 2026-yilgi hisob siyosati</strong></td>
+              <td>Policy</td>
+              <td><span class="badge badge-danger">Yuqori</span></td>
+              <td>Audit reglamentini yangilash</td>
+              <td><button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Tahrir loyihasi tayyorlandi', 'success')">Loyiha</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- TAB 3: Internal Policy RAG -->
+      <section class="business-tab-pane" id="bpane-internal_rag" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h2>Kompaniya Ichki Hujjatlari bo‘yicha AI Savol-Javob (Internal Policy RAG)</h2>
+          <p>Kompaniyaning ichki buyruqlari, HR reglamentlari va mehnat intizomi qoidalari bo‘yicha tezkor javob oling.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <input type="text" class="form-input-box" placeholder="Kompaniyaning ichki siyosati bo‘yicha savol bering (masalan: Xodimlarga mukofot berish tartibi qanday?)..." style="margin-bottom: 16px;" id="internal-rag-input" onkeydown="if(event.key==='Enter') submitInternalRAG()" />
+          <button class="btn btn-primary" onclick="submitInternalRAG()">AI Tahlil Qilish</button>
+          
+          <div id="internal-rag-result" style="margin-top: 20px; display: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 18px;">
+            <div style="font-weight: 700; color: #1e3a8a;">Manba: ABC Textile "Xodimlarni rag‘batlantirish nizomi № 14"</div>
+            <p style="font-size: 0.92rem; color: #334155; margin-top: 8px; line-height: 1.6;">
+              Kompaniyaning 2026-yilgi ichki nizomiga ko‘ra, choraklik mukofot xodimning KPI ko‘rsatkichlari kamida 85% ga yetganda va intizomiy jazo bo‘lmagan taqdirda bosh direktor buyrug‘i bilan tayinlanadi.
+            </p>
+            <div class="verifier-seal" style="margin-top: 12px;">
+              <div class="verifier-seal-left">
+                <div class="verifier-icon-badge">✓</div>
+                <div>
+                  <div class="verifier-title">Ichki hujjat bilan 100% solishtirildi</div>
+                  <div class="verifier-subtitle">Ichki PDF fayl: HR-REG-2026.pdf</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  function switchBusinessTab(tabName, btn) {
+    document.querySelectorAll('.business-tab-pane').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.app-sidebar .nav-item-btn').forEach(el => el.classList.remove('active'));
+    
+    const target = document.getElementById('bpane-' + tabName);
+    if (target) target.style.display = 'block';
+    if (btn) btn.classList.add('active');
+  }
+
+  function acceptBusinessRedline() {
+    const card = document.getElementById('b-risk-card');
+    card.style.borderColor = '#a7f3d0';
+    card.style.borderLeftColor = '#10b981';
+    card.style.background = '#f0fdf4';
+    card.innerHTML = `
+      <div style="color: #065f46; font-weight: 700; font-size: 1.05rem;">
+        ✓ 8.3-band muvaffaqiyatli qonunchilikka moslashtirildi (VERIFIED SAFE)
+      </div>
+      <p style="font-size: 0.88rem; color: #047857; margin-top: 4px;">
+        Bir tomonlama og‘ir jarima bekor qilindi. O‘zbekiston FK 333-moddasi talablariga mos 10% lik limit va teng javobgarlik kiritildi.
+      </p>
+    `;
+
+    document.getElementById('b-contract-text').innerHTML = `
+      <strong>8.3-band:</strong> Agar Tomonlardan biri o‘z majburiyatlarini bajarmasa yoki lozim darajada bajarmasa, aybdor Tomon ikkinchi Tomonga har bir kechiktirilgan kun uchun kechiktirilgan majburiyat qiymatining 0.1% miqdorida penya to‘laydi, biroq umumiy penya summasi shartnoma summasining 10% idan oshmasligi shart. Barcha hollarda har ikki tomon uchun teng javobgarlik choralari qo‘llaniladi.
+    `;
+    UIComponents.showToast('8.3-band tahriri qabul qilindi!', 'success');
+  }
+
+  function submitInternalRAG() {
+    const res = document.getElementById('internal-rag-result');
+    res.style.display = 'block';
+    UIComponents.showToast('Kompaniya ichki bazasidan tahlil olindi', 'success');
+  }
+</script>
+
+</body>
+</html>
