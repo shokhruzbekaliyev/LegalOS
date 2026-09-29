@@ -3,277 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LegalOS Uzbekistan — Avtorizatsiya va Tizimga Kirish</title>
+  <title>LegalOS Uzbekistan — Get Started / Tizimga Kirish</title>
   
-  <!-- Modern Fonts -->
+  <!-- Modern Typography (Inter & JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   
-  <!-- CSS Stylesheets (Blue, White, Green) -->
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/auth.css">
 </head>
-<body class="auth-page">
+<body class="auth-body-bg">
 
-<div class="auth-container">
-  
-  <!-- Left Hero Pane -->
-  <aside class="auth-hero-pane">
-    <div class="auth-hero-header">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-icon" style="width: 44px; height: 44px; background: linear-gradient(135deg, #2563eb, #10b981);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
+  <!-- Master Pinterest-Inspired Floating Card -->
+  <div class="pinterest-auth-card">
+    
+    <!-- 1. Left Fluid Silk Blue Mesh Wave Pane -->
+    <aside class="pinterest-left-banner">
+      <div class="left-banner-top">
+        <div class="left-banner-tagline">
+          O‘zbekiston LegalTech • AI Platformasi
         </div>
-        <div class="logo-text-group">
-          <span class="logo-title" style="font-size: 1.45rem;">Legal<span>OS</span></span>
-          <span class="logo-subtitle" style="font-size: 0.75rem;">O‘zbekiston LegalTech • AI</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="auth-hero-body">
-      <div class="hero-tagline-badge">
-        <span>✓ 100% Lex.uz bilan sinxronlangan</span>
-      </div>
-      <h1 class="auth-hero-title">
-        O‘zbekiston uchun to‘liq <span>yuridik operatsion tizim</span>.
-      </h1>
-      <p class="auth-hero-desc">
-        Savoldan — hujjatga. Hujjatdan — case’ga. Case’dan — proaktiv compliance va real yuristgacha bo‘lgan barcha huquqiy jarayonlar bir joyda.
-      </p>
-
-      <div class="hero-feature-list">
-        <div class="hero-feature-item">
-          <div class="hero-check-icon">✓</div>
-          <span><strong>AI Legal Core:</strong> 10 ta ixtisoslashgan agent va rasmiy manba tekshiruvchisi (Verifier).</span>
-        </div>
-        <div class="hero-feature-item">
-          <div class="hero-check-icon">✓</div>
-          <span><strong>Contract Intelligence:</strong> Shartnomalarni o‘qish, xavflarni tahlil qilish va Redline diff.</span>
-        </div>
-        <div class="hero-feature-item">
-          <div class="hero-check-icon">✓</div>
-          <span><strong>Court Strategy Simulator:</strong> Your Lawyer AI vs Opponent AI vs Judge AI stress-test.</span>
-        </div>
-        <div class="hero-feature-item">
-          <div class="hero-check-icon">✓</div>
-          <span><strong>Legal Time Machine:</strong> Qonunning aynan nizo yuz bergan sanadagi tarixiy tahriri.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="auth-hero-footer">
-      <span>© 2026 LegalOS Uzbekistan. Barcha huquqlar himoyalangan.</span>
-      <span style="color: #34d399; font-weight: 600;">Status: Tizim faol</span>
-    </div>
-  </aside>
-
-  <!-- Right Form Pane -->
-  <main class="auth-form-pane">
-    <div class="auth-form-wrapper">
-      
-      <div class="auth-form-header">
-        <h2 id="auth-main-title">Tizimga Kirish</h2>
-        <p>Iltimos, o‘z profilingizga mos rolni tanlang va kabinetga o‘ting.</p>
+        <h1 class="left-banner-heading">
+          Speed up your legal work with <span>LegalOS</span>
+        </h1>
+        <p class="left-banner-subdesc">
+          Savoldan — hujjatga. Hujjatdan — case’ga. Case’dan — proaktiv compliance va real yuristgacha bo‘lgan to‘liq yuridik operatsion tizim.
+        </p>
       </div>
 
-      <!-- Quick 1-Click Demo Box -->
-      <div class="quick-demo-strip">
-        <div class="quick-demo-title">
-          <span>⚡ Tezkor 1-Click Test Kirish (Demo):</span>
+      <div class="left-banner-bottom">
+        <div class="partners-label">Rasmiy Manbalar va Integratsiyalar</div>
+        <div class="partners-logos-row">
+          <span class="partner-logo-item verified-badge">
+            ✓ Lex.uz (100% Sinxron)
+          </span>
+          <span class="partner-logo-item">
+            ⚖️ Oliy Sud
+          </span>
+          <span class="partner-logo-item">
+            🏛️ Adliya Vazirligi
+          </span>
+          <span class="partner-logo-item">
+            🆔 OneID
+          </span>
         </div>
-        <div class="quick-demo-buttons">
-          <button type="button" class="btn-demo-role" onclick="quickLogin('CITIZEN', 'citizen.html')">
-            👤 Fuqaro
+      </div>
+    </aside>
+
+    <!-- 2. Right Form Pane -->
+    <main class="pinterest-right-form">
+      <div class="right-form-header">
+        <h2 class="right-form-title" id="auth-main-title">Get Started Now</h2>
+        <p class="right-form-subtitle">Please log in to your account to continue.</p>
+      </div>
+
+      <!-- Role Selector Pills -->
+      <div style="margin-bottom: 8px;">
+        <label class="form-field-label">Foydalanuvchi Roli (Tanlang):</label>
+        <div class="role-pills-row" id="role-pills-container">
+          <button type="button" class="role-pill-btn active" data-role="CITIZEN" onclick="selectAuthRole('CITIZEN', this)">
+            <span style="font-size: 1.1rem;">👤</span>
+            <span>Fuqaro</span>
           </button>
-          <button type="button" class="btn-demo-role" onclick="quickLogin('LAWYER', 'lawyer.html')">
-            ⚖️ Yurist
+          <button type="button" class="role-pill-btn" data-role="LAWYER" onclick="selectAuthRole('LAWYER', this)">
+            <span style="font-size: 1.1rem;">⚖️</span>
+            <span>Yurist</span>
           </button>
-          <button type="button" class="btn-demo-role" onclick="quickLogin('ORG_MEMBER', 'business.html')">
-            🏢 Biznes
+          <button type="button" class="role-pill-btn" data-role="ORG_MEMBER" onclick="selectAuthRole('ORG_MEMBER', this)">
+            <span style="font-size: 1.1rem;">🏢</span>
+            <span>Biznes</span>
           </button>
-          <button type="button" class="btn-demo-role" onclick="quickLogin('ORG_ADMIN', 'admin.html')">
-            🛡️ Admin
+          <button type="button" class="role-pill-btn" data-role="ORG_ADMIN" onclick="selectAuthRole('ORG_ADMIN', this)">
+            <span style="font-size: 1.1rem;">🛡️</span>
+            <span>Admin</span>
           </button>
         </div>
       </div>
 
-      <!-- OneID Button -->
-      <button type="button" class="btn-oneid" onclick="quickLogin(currentSelectedRole, getRoleRedirectUrl(currentSelectedRole))">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
-        <span>OneID orqali identifikatsiya bilan kirish</span>
-      </button>
+      <!-- Main Login Form -->
+      <form id="pinterest-login-form" onsubmit="handlePinterestLogin(event)">
+        
+        <!-- Name Field -->
+        <div class="form-field-group">
+          <label class="form-field-label" for="input-name">Name</label>
+          <input type="text" id="input-name" class="form-field-input" placeholder="Enter your name..." value="Otabek Fayzullayev" required />
+        </div>
 
-      <div class="divider-line">yoki login va parol orqali</div>
+        <!-- Email Field -->
+        <div class="form-field-group">
+          <label class="form-field-label" for="input-email">Email address</label>
+          <input type="email" id="input-email" class="form-field-input" placeholder="workmail@company.uz" value="otabek@gmail.com" required />
+        </div>
 
-      <!-- Role Selector Cards -->
-      <div class="role-select-label">
-        <span>Foydalanuvchi Roli:</span>
-        <span style="font-size: 0.72rem; color: #2563eb; text-transform: none;">Alohida kabinetga yo‘naltiriladi</span>
-      </div>
-
-      <div class="role-cards-grid" id="role-cards-selector">
-        <!-- 1. Citizen -->
-        <div class="role-option-card" data-role="CITIZEN" onclick="selectRole('CITIZEN')">
-          <div class="role-option-title">
-            <span>👤</span> Fuqaro (Citizen)
+        <!-- Password Field -->
+        <div class="form-field-group">
+          <div class="password-row-header">
+            <label class="form-field-label" for="input-password" style="margin-bottom: 0;">Password</label>
+            <a href="#" class="forgot-link" onclick="alert('Parolni tiklash yo‘riqnomasi pochtangizga yuborildi!'); return false;">Forgot Password?</a>
           </div>
-          <div class="role-option-desc">
-            Oddiy huquqiy savollar, shablon arizalar va yurist topish
+          <div style="position: relative;">
+            <input type="password" id="input-password" class="form-field-input" placeholder="••••••••••••" value="LegalOS2026Secure!" required />
           </div>
         </div>
 
-        <!-- 2. Lawyer -->
-        <div class="role-option-card" data-role="LAWYER" onclick="selectRole('LAWYER')">
-          <div class="role-option-title">
-            <span>⚖️</span> Yurist (Lawyer)
-          </div>
-          <div class="role-option-desc">
-            Sud ishlari, strategiya simulyatori va mijozlar hisobi
-          </div>
+        <!-- Terms Checkbox -->
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms-agree" checked required />
+          <label for="terms-agree">
+            I agree to the <a href="#">Terms & Privacy</a>
+          </label>
         </div>
 
-        <!-- 3. Business -->
-        <div class="role-option-card" data-role="ORG_MEMBER" onclick="selectRole('ORG_MEMBER')">
-          <div class="role-option-title">
-            <span>🏢</span> Biznes / Xodim
-          </div>
-          <div class="role-option-desc">
-            Shartnomalar tahlili, Redline va proaktiv compliance
-          </div>
-        </div>
-
-        <!-- 4. Admin -->
-        <div class="role-option-card selected" data-role="ORG_ADMIN" onclick="selectRole('ORG_ADMIN')">
-          <div class="role-option-title">
-            <span>🛡️</span> Kompaniya Admini
-          </div>
-          <div class="role-option-desc">
-            Jamoa ruxsatnomalari (RBAC), audit va tizim boshqaruvi
-          </div>
-        </div>
-      </div>
-
-      <!-- Credentials Form -->
-      <form id="auth-form" onsubmit="handleAuthSubmit(event)">
-        <div class="form-group">
-          <label for="input-email">Elektron pochta yoki Telefon raqami:</label>
-          <input type="text" id="input-email" class="form-input-box" placeholder="masalan: user@legalos.uz yoki +998 90 123 45 67" required value="admin@abctextile.uz" />
-        </div>
-
-        <div class="form-group">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <label for="input-password">Parol:</label>
-            <a href="#" style="font-size: 0.78rem; color: #2563eb;" onclick="alert('Parolni tiklash havolasi emailingizga yuborildi'); return false;">Parolni unutdingizmi?</a>
-          </div>
-          <input type="password" id="input-password" class="form-input-box" placeholder="••••••••••••" required value="SecretLegalOS2026!" />
-        </div>
-
-        <button type="submit" class="btn-submit-auth" id="btn-submit">
-          <span>Kabinetga Kirish</span> →
+        <!-- Submit Button -->
+        <button type="submit" class="btn-pinterest-login" id="btn-login-submit">
+          Log in
         </button>
+
       </form>
 
-      <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--color-text-muted);">
-        <span>Hisobingiz yo‘qmi? </span>
-        <a href="#" style="color: #2563eb; font-weight: 600;" onclick="toggleAuthMode(); return false;" id="auth-toggle-link">
-          Ro‘yxatdan o‘tish
-        </a>
+      <!-- Switch between login/signup -->
+      <div class="signup-switch-prompt">
+        <span id="prompt-switch-text">Have an account? </span>
+        <a href="#" onclick="togglePinterestMode(); return false;" id="prompt-switch-link">Sign up</a>
       </div>
 
-    </div>
-  </main>
+      <!-- Divider -->
+      <div class="pinterest-divider">Or</div>
 
-</div>
+      <!-- Dual Social / OneID Auth Buttons -->
+      <div class="dual-auth-row">
+        <button type="button" class="btn-social-outline btn-oneid-card" onclick="triggerQuickPortalLogin()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
+          <span>Login with OneID</span>
+        </button>
 
-<script>
-  let currentSelectedRole = 'ORG_ADMIN';
-  let isRegisterMode = false;
+        <button type="button" class="btn-social-outline" onclick="triggerQuickPortalLogin()">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.9c2.28-2.1 3.64-5.2 3.64-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.9-3.05c-1.08.72-2.45 1.16-4.03 1.16-3.1 0-5.73-2.1-6.67-4.93H1.27v3.13C3.25 21.3 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.33 14.27A7.2 7.2 0 0 1 4.95 12c0-.79.14-1.57.38-2.27V6.6H1.27A11.96 11.96 0 0 0 0 12c0 1.92.45 3.74 1.27 5.4l4.06-3.13z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.35.61 4.6 1.8l3.43-3.43C17.93 1.25 15.22 0 12 0 7.33 0 3.25 2.7 1.27 6.6l4.06 3.13c.94-2.83 3.57-4.96 6.67-4.96z"/></svg>
+          <span>Login with Google</span>
+        </button>
+      </div>
 
-  const roleRedirectMap = {
-    'CITIZEN': 'citizen.html',
-    'LAWYER': 'lawyer.html',
-    'ORG_MEMBER': 'business.html',
-    'ORG_ADMIN': 'admin.html'
-  };
+    </main>
 
-  const defaultUserNames = {
-    'CITIZEN': 'Otabek Fayzullayev',
-    'LAWYER': 'Sardor Rahimov (Advokat)',
-    'ORG_MEMBER': 'Malika Saidova (HR Boshlig‘i)',
-    'ORG_ADMIN': 'Azamat Usmonov (Bosh Yurist)'
-  };
+  </div>
 
-  function getRoleRedirectUrl(role) {
-    return roleRedirectMap[role] || 'citizen.html';
-  }
+  <script>
+    let activeRole = 'CITIZEN';
+    let isSignup = false;
 
-  function selectRole(role) {
-    currentSelectedRole = role;
-    const cards = document.querySelectorAll('.role-option-card');
-    cards.forEach(card => {
-      if (card.dataset.role === role) {
-        card.classList.add('selected');
-      } else {
-        card.classList.remove('selected');
+    const roleTargetMap = {
+      'CITIZEN': 'citizen.html',
+      'LAWYER': 'lawyer.html',
+      'ORG_MEMBER': 'business.html',
+      'ORG_ADMIN': 'admin.html'
+    };
+
+    const roleNamePresets = {
+      'CITIZEN': { name: 'Otabek Fayzullayev', email: 'otabek@gmail.com' },
+      'LAWYER': { name: 'Sardor Rahimov (Advokat)', email: 'sardor.lawyer@barrister.uz' },
+      'ORG_MEMBER': { name: 'Malika Saidova (HR Boshlig‘i)', email: 'malika.hr@abctextile.uz' },
+      'ORG_ADMIN': { name: 'Azamat Usmonov (Bosh Yurist)', email: 'azamat.admin@abctextile.uz' }
+    };
+
+    function selectAuthRole(role, btn) {
+      activeRole = role;
+      document.querySelectorAll('.role-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const preset = roleNamePresets[role];
+      if (preset) {
+        document.getElementById('input-name').value = preset.name;
+        document.getElementById('input-email').value = preset.email;
       }
-    });
-
-    // Update email placeholder based on role
-    const emailInput = document.getElementById('input-email');
-    if (role === 'CITIZEN') {
-      emailInput.value = 'otabek@gmail.com';
-    } else if (role === 'LAWYER') {
-      emailInput.value = 'sardor.lawyer@barrister.uz';
-    } else if (role === 'ORG_MEMBER') {
-      emailInput.value = 'malika.hr@abctextile.uz';
-    } else if (role === 'ORG_ADMIN') {
-      emailInput.value = 'azamat.admin@abctextile.uz';
     }
-  }
 
-  function quickLogin(role, targetUrl) {
-    sessionStorage.setItem('legalos_role', role);
-    sessionStorage.setItem('legalos_username', defaultUserNames[role]);
-    sessionStorage.setItem('legalos_is_authenticated', 'true');
-    window.location.href = targetUrl;
-  }
+    function handlePinterestLogin(e) {
+      e.preventDefault();
+      const targetUrl = roleTargetMap[activeRole] || 'citizen.html';
+      const name = document.getElementById('input-name').value;
+      const email = document.getElementById('input-email').value;
 
-  function handleAuthSubmit(e) {
-    e.preventDefault();
-    const email = document.getElementById('input-email').value;
-    const targetUrl = getRoleRedirectUrl(currentSelectedRole);
-    
-    sessionStorage.setItem('legalos_role', currentSelectedRole);
-    sessionStorage.setItem('legalos_email', email);
-    sessionStorage.setItem('legalos_username', defaultUserNames[currentSelectedRole] || email.split('@')[0]);
-    sessionStorage.setItem('legalos_is_authenticated', 'true');
-    
-    window.location.href = targetUrl;
-  }
+      sessionStorage.setItem('legalos_role', activeRole);
+      sessionStorage.setItem('legalos_username', name);
+      sessionStorage.setItem('legalos_email', email);
+      sessionStorage.setItem('legalos_is_authenticated', 'true');
 
-  function toggleAuthMode() {
-    isRegisterMode = !isRegisterMode;
-    const title = document.getElementById('auth-main-title');
-    const btn = document.getElementById('btn-submit');
-    const toggleLink = document.getElementById('auth-toggle-link');
-
-    if (isRegisterMode) {
-      title.textContent = "Ro‘yxatdan O‘tish";
-      btn.innerHTML = "<span>Ro‘yxatdan O‘tish va Boshlash</span> →";
-      toggleLink.textContent = "Tizimga kirish";
-    } else {
-      title.textContent = "Tizimga Kirish";
-      btn.innerHTML = "<span>Kabinetga Kirish</span> →";
-      toggleLink.textContent = "Ro‘yxatdan o‘tish";
+      window.location.href = targetUrl;
     }
-  }
-</script>
+
+    function triggerQuickPortalLogin() {
+      const targetUrl = roleTargetMap[activeRole] || 'citizen.html';
+      window.location.href = targetUrl;
+    }
+
+    function togglePinterestMode() {
+      isSignup = !isSignup;
+      const title = document.getElementById('auth-main-title');
+      const submitBtn = document.getElementById('btn-login-submit');
+      const promptText = document.getElementById('prompt-switch-text');
+      const promptLink = document.getElementById('prompt-switch-link');
+
+      if (isSignup) {
+        title.textContent = 'Create an Account';
+        submitBtn.textContent = 'Sign up';
+        promptText.textContent = 'Already have an account? ';
+        promptLink.textContent = 'Log in';
+      } else {
+        title.textContent = 'Get Started Now';
+        submitBtn.textContent = 'Log in';
+        promptText.textContent = 'Have an account? ';
+        promptLink.textContent = 'Sign up';
+      }
+    }
+  </script>
 
 </body>
 </html>

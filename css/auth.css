@@ -1,413 +1,395 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Authorization (Login / Register) Styles
-   Palette: Blue (Ko'k), White (Oq), Green (Yashil)
+   LegalOS Uzbekistan - Auth Design Template (Pinterest Reference Matched)
+   Floating Rounded Card, Blue Silk Mesh Wave Gradient, Clean Form Controls
    ========================================================================== */
 
-.auth-page {
+.auth-body-bg {
   min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  background: #eef2f6; /* Soft neutral backdrop matching reference */
   display: flex;
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
-  color: var(--color-text-main);
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-sans);
+  color: var(--color-text-main);
+  box-sizing: border-box;
 }
 
-.auth-container {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
+/* Master Floating Card Container */
+.pinterest-auth-card {
   width: 100%;
-  min-height: 100vh;
+  max-width: 1140px;
+  min-height: 680px;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  padding: 16px;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
 }
 
-@media (max-width: 1024px) {
-  .auth-container {
+@media (max-width: 992px) {
+  .pinterest-auth-card {
     grid-template-columns: 1fr;
+    max-width: 580px;
+    padding: 24px;
+    border-radius: 24px;
   }
-  .auth-hero-pane {
+  .pinterest-left-banner {
     display: none;
   }
 }
 
-/* 1. Left Hero Pane (Branding & Value Proposition) */
-.auth-hero-pane {
-  background: linear-gradient(145deg, #0a192f 0%, #1e3a8a 50%, #064e3b 100%);
-  color: var(--color-white);
-  padding: 50px 60px;
+/* 1. Left Silk Blue Wave Banner */
+.pinterest-left-banner {
+  border-radius: 24px;
+  padding: 48px 44px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-}
-
-.auth-hero-pane::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.auth-hero-pane::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.auth-hero-header .brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.auth-hero-header .logo-title {
   color: #ffffff;
-}
-.auth-hero-header .logo-title span {
-  color: #60a5fa;
-}
-.auth-hero-header .logo-subtitle {
-  color: #34d399;
+  background: 
+    radial-gradient(circle at 20% 25%, #2563eb 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, #0284c7 0%, transparent 45%),
+    radial-gradient(circle at 30% 85%, #059669 0%, transparent 40%),
+    radial-gradient(circle at 75% 80%, #1e3a8a 0%, transparent 50%),
+    linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #0f172a 100%);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
 }
 
-.auth-hero-body {
-  margin: 40px 0;
+/* Decorative fluid wave lines inside left banner */
+.pinterest-left-banner::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(ellipse at center, rgba(96, 165, 250, 0.35) 0%, transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: floatWave 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatWave {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(1.05); }
+  100% { transform: translate(20px, -20px) scale(0.98); }
+}
+
+.left-banner-top {
+  position: relative;
   z-index: 2;
 }
 
-.hero-tagline-badge {
+.left-banner-tagline {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.left-banner-heading {
+  font-size: 2.45rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 420px;
+}
+
+.left-banner-heading span {
+  color: #6ee7b7; /* Green verified accent from LegalOS palette */
+}
+
+.left-banner-subdesc {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* Bottom Partners / Integrations Bar */
+.left-banner-bottom {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 24px;
+}
+
+.partners-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.partners-logos-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.partner-logo-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
-  background: rgba(16, 185, 129, 0.2);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #6ee7b7;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.auth-hero-title {
-  font-size: 2.3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-.auth-hero-title span {
-  background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.auth-hero-desc {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  line-height: 1.6;
-  margin-bottom: 32px;
-  max-width: 500px;
-}
-
-.hero-feature-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.hero-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-  color: #f1f5f9;
-}
-
-.hero-check-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.25);
-  border: 1px solid #10b981;
-  color: #34d399;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  flex-shrink: 0;
-}
-
-.auth-hero-footer {
-  z-index: 2;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 0.82rem;
-  color: #94a3b8;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.partner-logo-item.verified-badge {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #34d399;
+  color: #ffffff;
 }
 
 /* 2. Right Form Pane */
-.auth-form-pane {
-  background: var(--color-white);
-  padding: 40px 60px;
+.pinterest-right-form {
+  padding: 40px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto;
 }
 
 @media (max-width: 640px) {
-  .auth-form-pane {
-    padding: 30px 20px;
+  .pinterest-right-form {
+    padding: 20px 10px;
   }
 }
 
-.auth-form-wrapper {
-  max-width: 540px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.auth-form-header {
+.right-form-header {
   margin-bottom: 24px;
 }
 
-.auth-form-header h2 {
-  font-size: 1.75rem;
-  color: var(--color-primary-950);
+.right-form-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
   margin-bottom: 6px;
 }
 
-.auth-form-header p {
-  color: var(--color-text-muted);
+.right-form-subtitle {
   font-size: 0.92rem;
+  color: #64748b;
 }
 
-/* Role Selector Grid */
-.role-select-label {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--color-text-main);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.role-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.role-option-card {
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 14px 16px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  background: var(--color-surface-card);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  position: relative;
-}
-
-.role-option-card:hover {
-  border-color: var(--color-primary-300);
-  background: var(--color-surface-subtle);
-  transform: translateY(-1px);
-}
-
-.role-option-card.selected {
-  border-color: var(--color-primary-600);
-  background: #eff6ff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-}
-
-.role-option-card.selected::after {
-  content: '✓';
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  width: 20px;
-  height: 20px;
-  background: var(--color-primary-600);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-.role-option-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--color-text-main);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.role-option-desc {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-  line-height: 1.35;
-}
-
-/* Quick 1-Click Demo Buttons */
-.quick-demo-strip {
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-  border: 1px solid var(--color-accent-200);
-  border-radius: var(--radius-lg);
-  padding: 12px 16px;
-  margin-bottom: 24px;
-}
-
-.quick-demo-title {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-accent-800);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.quick-demo-buttons {
+/* Role Selector Grid matching reference style */
+.role-pills-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  margin-bottom: 22px;
 }
 
-.btn-demo-role {
-  padding: 6px 8px;
-  font-size: 0.75rem;
+.role-pill-btn {
+  padding: 8px 6px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  font-size: 0.78rem;
   font-weight: 600;
-  border-radius: var(--radius-sm);
-  background: white;
-  border: 1px solid var(--color-accent-300);
-  color: var(--color-accent-800);
+  color: #475569;
   cursor: pointer;
   transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
   text-align: center;
 }
 
-.btn-demo-role:hover {
-  background: var(--color-accent-600);
-  color: white;
-  border-color: var(--color-accent-600);
+.role-pill-btn:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
 }
 
-/* OneID Government Button */
-.btn-oneid {
+.role-pill-btn.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
+}
+
+/* Sleek Inputs matching Pinterest reference */
+.form-field-group {
+  margin-bottom: 16px;
+}
+
+.form-field-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.form-field-input {
   width: 100%;
+  padding: 12px 16px;
+  font-size: 0.93rem;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.form-field-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.password-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.forgot-link {
+  font-size: 0.8rem;
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  margin-bottom: 22px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox-row a {
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Primary Button (Pinterest Reference Style) */
+.btn-pinterest-login {
+  width: 100%;
+  padding: 13px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.96rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+  transition: all var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px;
-  border-radius: var(--radius-md);
-  background: #003366;
-  color: white;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  margin-bottom: 18px;
+  gap: 8px;
 }
 
-.btn-oneid:hover {
-  background: #002244;
-  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
+.btn-pinterest-login:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
 }
 
-.divider-line {
+.signup-switch-prompt {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 0.86rem;
+  color: #64748b;
+}
+
+.signup-switch-prompt a {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* "Or" Divider */
+.pinterest-divider {
   display: flex;
   align-items: center;
   text-align: center;
   margin: 18px 0;
-  color: var(--color-text-light);
-  font-size: 0.8rem;
+  color: #94a3b8;
+  font-size: 0.82rem;
 }
 
-.divider-line::before,
-.divider-line::after {
+.pinterest-divider::before,
+.pinterest-divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.divider-line::before { margin-right: 12px; }
-.divider-line::after { margin-left: 12px; }
+.pinterest-divider::before { margin-right: 14px; }
+.pinterest-divider::after { margin-left: 14px; }
 
-/* Input Field Styling */
-.form-group {
+/* Social / OneID Dual Buttons */
+.dual-auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-social-outline {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
-.form-group label {
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-text-main);
-}
-
-.form-input-box {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  background: white;
-  transition: all var(--transition-fast);
-}
-
-.form-input-box:focus {
-  border-color: var(--color-primary-600);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-.btn-submit-auth {
-  width: 100%;
-  padding: 13px;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
-  color: white;
-  border: none;
+  color: #1e293b;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
   transition: all var(--transition-fast);
-  margin-top: 8px;
 }
 
-.btn-submit-auth:hover {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-  transform: translateY(-1px);
+.btn-social-outline:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.btn-oneid-card {
+  border-color: #003366;
+  color: #003366;
+}
+.btn-oneid-card:hover {
+  background: #f0f7ff;
 }
