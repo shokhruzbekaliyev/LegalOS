@@ -32,12 +32,10 @@
         </div>
       </a>
 
-      <!-- Quick Portal Links -->
-      <div class="admin-portal-links" title="Mavjud portallarni ko‘rish va sinash">
+      <!-- Quick Portal Links (Accessible for Business & Admin) -->
+      <div class="admin-portal-links" title="Mavjud portallarni ko‘rish">
         <span style="font-size: 0.72rem; color: #64748b; font-weight: 700; padding: 0 4px;" data-i18n="adminPortalSwitcher">Portallar:</span>
-        <a href="citizen.html" class="portal-link-btn" title="Fuqaro portalini ko‘rish">👤 Fuqaro</a>
-        <a href="lawyer.html" class="portal-link-btn" title="Yurist panelini ko‘rish">⚖️ Yurist</a>
-        <a href="business.html" class="portal-link-btn" title="Biznes portalini ko‘rish">🏢 Biznes</a>
+        <a href="business.html" class="portal-link-btn" title="Biznes portalini ko‘rish">🏢 Biznes Portali</a>
         <a href="index.html" class="portal-link-btn" title="Asosiy AI Studioni ochish">⚡ AI Studio</a>
       </div>
     </div>
@@ -1070,6 +1068,52 @@
     closeAddUserModal();
     UIComponents.showToast(`${name} muvaffaqiyatli qo‘shildi!`, 'success');
   }
+
+  // =========================================================================
+  // RBAC Access Control Guard
+  // Only Business (ORG_MEMBER) and Admins (ORG_ADMIN) are authorized.
+  // Citizens (CITIZEN) and Lawyers (LAWYER) are strictly blocked.
+  // =========================================================================
+  (function enforceAdminRBAC() {
+    const role = sessionStorage.getItem('legalos_role') || 'ORG_ADMIN';
+
+    if (role === 'CITIZEN' || role === 'LAWYER') {
+      const isCitizen = role === 'CITIZEN';
+      const redirectUrl = isCitizen ? 'citizen.html' : 'lawyer.html';
+      const roleName = isCitizen ? 'Fuqaro (CITIZEN)' : 'Yurist / Advokat (LAWYER)';
+      const returnBtnText = isCitizen ? '👤 Fuqaro Portaliga Qaytish' : '⚖️ Yurist Ish Paneliga Qaytish';
+
+      document.body.innerHTML = `
+        <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #0f172a; padding: 20px; font-family: var(--font-sans);">
+          <div style="background: white; border-radius: 20px; padding: 40px; max-width: 540px; width: 100%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: #fef2f2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 20px;">
+              🛡️
+            </div>
+            <span style="background: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+              403 • Kirish Cheklangan
+            </span>
+            <h2 style="font-size: 1.5rem; color: #0f172a; margin-top: 14px; font-weight: 800;">
+              Admin Panelga Kirish Huquqi Yo‘q
+            </h2>
+            <p style="color: #475569; font-size: 0.95rem; margin-top: 10px; line-height: 1.6;">
+              Ushbu bo‘lim faqat <strong>Tashkilot Adminlari (Admin)</strong> va <strong>Biznes Vakillari (Biznes)</strong> uchun mo‘ljallangan. Fuqarolar va mustaqil yuristlar uchun ma’muriy boshqaruv paneli cheklangan.
+            </p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; margin: 20px 0; font-size: 0.85rem; color: #334155;">
+              Sizning joriy tizim rolingiz: <strong style="color: #dc2626;">${roleName}</strong>
+            </div>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="${redirectUrl}" style="background: #2563eb; color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                ${returnBtnText}
+              </a>
+              <a href="login.html" style="background: #f1f5f9; color: #334155; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                Boshqa Hisob bilan Kirish
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  })();
 </script>
 
 </body>

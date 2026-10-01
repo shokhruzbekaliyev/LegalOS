@@ -111,6 +111,16 @@ function updateRoleDisplay(role) {
     userName.textContent = 'Azamat Usmonov';
     userRole.textContent = (window.i18n ? i18n.t('adminUserRole') : '') || 'BOSH ADMIN • ABC Textile';
   }
+
+  // Access Control: Admin Panel is accessible only to Business (ORG_MEMBER) and Admin (ORG_ADMIN)
+  const adminBtn = document.getElementById('index-admin-panel-btn');
+  if (adminBtn) {
+    if (role === 'ORG_ADMIN' || role === 'ORG_MEMBER') {
+      adminBtn.style.display = 'inline-flex';
+    } else {
+      adminBtn.style.display = 'none';
+    }
+  }
 }
 
 // Render Chat Messages
