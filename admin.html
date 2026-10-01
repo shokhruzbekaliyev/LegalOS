@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LegalOS — Tashkilot Boshqaruvi & RBAC (Admin)</title>
+  <title>LegalOS — SuperAdmin & Tizim Boshqaruv Markazi</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,14 +27,18 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="logo-text-group">
-          <span class="logo-title">Legal<span>OS</span></span>
-          <span class="logo-subtitle" data-i18n="portalSubtitleAdmin">Tashkilot Admini</span>
+          <span class="logo-title">Legal<span>OS</span> <span style="font-size: 0.72rem; background: #1e40af; color: white; padding: 2px 7px; border-radius: 9999px; margin-left: 4px; font-weight: 800;">ADMIN</span></span>
+          <span class="logo-subtitle" data-i18n="portalSubtitleAdmin">Boshqaruv Markazi (SuperAdmin)</span>
         </div>
       </a>
 
-      <div class="header-search" style="width: 380px;">
-        <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" data-i18n-placeholder="searchPlaceholderAdmin" placeholder="Xodimlar, audit jurnallari, billing yoki API sozlamalari..." />
+      <!-- Quick Portal Links -->
+      <div class="admin-portal-links" title="Mavjud portallarni ko‘rish va sinash">
+        <span style="font-size: 0.72rem; color: #64748b; font-weight: 700; padding: 0 4px;" data-i18n="adminPortalSwitcher">Portallar:</span>
+        <a href="citizen.html" class="portal-link-btn" title="Fuqaro portalini ko‘rish">👤 Fuqaro</a>
+        <a href="lawyer.html" class="portal-link-btn" title="Yurist panelini ko‘rish">⚖️ Yurist</a>
+        <a href="business.html" class="portal-link-btn" title="Biznes portalini ko‘rish">🏢 Biznes</a>
+        <a href="index.html" class="portal-link-btn" title="Asosiy AI Studioni ochish">⚡ AI Studio</a>
       </div>
     </div>
 
@@ -42,19 +46,22 @@
       <!-- Language Switcher [ O‘Z | РУ ] -->
       <div id="admin-lang-switcher"></div>
 
-      <span class="status-pill">
+      <!-- System Health Badge -->
+      <span class="status-pill" title="Tizim to‘liq operatsion rejimda ishlamoqda">
         <span class="status-dot-pulse"></span>
-        <span data-i18n="protectedStatus">RBAC & Audit: Himoyalangan</span>
+        <span data-i18n="protectedStatus">Server: 99.98% Barqaror</span>
       </span>
 
+      <!-- Admin Profile -->
       <div class="user-profile-menu">
         <div class="user-avatar" style="background: linear-gradient(135deg, #1e40af, #047857);">AU</div>
         <div class="user-info">
           <span class="user-name">Azamat Usmonov</span>
-          <span class="user-role-label" data-i18n="adminUserRole">🛡️ BOSH ADMIN • Bosh Yurist</span>
+          <span class="user-role-label" data-i18n="adminUserRole">🛡️ SUPERADMIN • Boshqaruvchi</span>
         </div>
       </div>
 
+      <!-- Logout -->
       <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
         <span data-i18n="logout">Chiqish</span>
@@ -66,22 +73,57 @@
     <!-- Sidebar -->
     <aside class="app-sidebar">
       <div>
-        <div class="sidebar-section-title" data-i18n="navMainProcesses">Ma'muriy Boshqaruv</div>
+        <div class="sidebar-section-title" data-i18n="navMainProcesses">Boshqaruv Menyu</div>
         <ul class="sidebar-nav-list">
           <li>
-            <button class="nav-item-btn active" onclick="switchAdminTab('users', this)">
+            <button class="nav-item-btn active" onclick="switchAdminTab('overview', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span data-i18n="navAdminDashboard">Umumiy Boshqaruv</span>
+              </span>
+              <span class="badge badge-blue">Jonli</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchAdminTab('users', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                <span data-i18n="workspaceTitle">Xodimlar va Rollar (RBAC)</span>
+                <span data-i18n="navAdminUsers">Foydalanuvchilar & RBAC</span>
               </span>
-              <span class="nav-badge-count">3 a'zo</span>
+              <span class="nav-badge-count">1,420</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchAdminTab('lawyers', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span data-i18n="navAdminLawyers">Yuristlar Moderatsiyasi</span>
+              </span>
+              <span class="nav-badge-count danger">2 yangi</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchAdminTab('lexsync', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                <span data-i18n="navAdminLexSync">Lex.uz & RAG Sinxronlash</span>
+              </span>
+              <span class="badge badge-green">100%</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" onclick="switchAdminTab('aimodels', this)">
+              <span class="nav-btn-content">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                <span data-i18n="navAdminAiModels">AI Modellari & Tokenlar</span>
+              </span>
             </button>
           </li>
           <li>
             <button class="nav-item-btn" onclick="switchAdminTab('audit', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                <span data-i18n="navAuditLogs">Tizim Auditi va Loglar</span>
+                <span data-i18n="navAdminAudit">Xavfsizlik & Audit Loglar</span>
               </span>
             </button>
           </li>
@@ -89,16 +131,16 @@
             <button class="nav-item-btn" onclick="switchAdminTab('billing', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                <span data-i18n="navBilling">Tariflar va Obuna</span>
+                <span data-i18n="navAdminBilling">Tariflar & Tushumlar</span>
               </span>
-              <span class="badge badge-green">Biznes Tarif</span>
+              <span class="badge badge-green">48.5M</span>
             </button>
           </li>
           <li>
             <button class="nav-item-btn" onclick="switchAdminTab('api', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                <span data-i18n="navApi">API va Integratsiyalar</span>
+                <span data-i18n="navAdminApi">API & Integratsiyalar</span>
               </span>
             </button>
           </li>
@@ -107,10 +149,11 @@
 
       <!-- Security Baseline Card -->
       <div class="sidebar-agent-widget" style="background: #eff6ff; border-color: #bfdbfe;">
-        <div style="font-size: 0.78rem; font-weight: 700; color: #1e40af;">Xavfsizlik Standarti:</div>
+        <div style="font-size: 0.78rem; font-weight: 700; color: #1e40af;">🛡️ Xavfsizlik Standarti:</div>
         <div style="font-size: 0.74rem; color: #1e3a8a; margin-top: 4px; line-height: 1.4;">
           ✓ RBAC ruxsatlar nazorati<br>
-          ✓ Multi-tenant izolyatsiya<br>
+          ✓ Multi-tenant ma’lumot izolyatsiyasi<br>
+          ✓ Zero-Hallucination tekshiruvi<br>
           ✓ Audit trail (o‘chmas jurnal)
         </div>
       </div>
@@ -119,91 +162,543 @@
     <!-- Main Content Area -->
     <main class="app-main">
       
-      <!-- TAB 1: User Management (RBAC) -->
-      <section class="admin-tab-pane" id="apane-users">
+      <!-- =====================================================================
+           TAB 1: Overview Dashboard
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-overview">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <div>
-            <h2>Tashkilot Foydalanuvchilari va Rollar (RBAC)</h2>
-            <p>Kompaniyadagi xodimlarga kirish huquqlarini belgilang yoki yangi taklifnoma yuboring.</p>
+            <h2>LegalOS Platformasi — Boshqaruv Markazi</h2>
+            <p>Butun respublika bo‘yicha fuqarolar, yuristlar, bizneslar va AI faoliyati tahlili.</p>
           </div>
-          <button class="btn btn-primary" onclick="UIComponents.showToast('Yangi xodimga taklifnoma emailingiz orqali jo‘natildi', 'success')">
-            + Yangi Xodim Qo‘shish
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary" onclick="openAddUserModal()">
+              + Yangi Foydalanuvchi
+            </button>
+            <button class="btn btn-primary" onclick="triggerLexSync()">
+              🔄 Lex.uz ni Sinxronlash
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="kpi-top-row">
+              <div>
+                <span class="kpi-title-label">Jami Foydalanuvchilar</span>
+                <div class="kpi-value-num">1,420</div>
+              </div>
+              <div class="kpi-icon-badge" style="background: #eff6ff; color: #2563eb;">👥</div>
+            </div>
+            <div class="kpi-trend-pill positive">
+              <span>↑ +14.2%</span> <span style="color: #64748b; font-weight: normal;">oxirgi 7 kunda</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 8px;">
+              1,150 fuqaro • 185 korxona • 85 yurist
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="kpi-top-row">
+              <div>
+                <span class="kpi-title-label">Bugungi AI So‘rovlar</span>
+                <div class="kpi-value-num">8,940</div>
+              </div>
+              <div class="kpi-icon-badge" style="background: #ecfdf5; color: #059669;">⚡</div>
+            </div>
+            <div class="kpi-trend-pill positive">
+              <span>✓ 100%</span> <span style="color: #64748b; font-weight: normal;">Zero-hallucination</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 8px;">
+              O‘rtacha retrieval tezligi: 290ms
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="kpi-top-row">
+              <div>
+                <span class="kpi-title-label">Tahlil Qilingan Hujjatlar</span>
+                <div class="kpi-value-num">342</div>
+              </div>
+              <div class="kpi-icon-badge" style="background: #f5f3ff; color: #7c3aed;">📄</div>
+            </div>
+            <div class="kpi-trend-pill positive">
+              <span>🛡️ 18 ta xavfli band</span> <span style="color: #64748b; font-weight: normal;">redline qilindi</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 8px;">
+              Shartnomalar, dalillar, da’vo arizalari
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="kpi-top-row">
+              <div>
+                <span class="kpi-title-label">Lex.uz Qonunlar Bazasi</span>
+                <div class="kpi-value-num">48,250</div>
+              </div>
+              <div class="kpi-icon-badge" style="background: #fffbeb; color: #d97706;">📚</div>
+            </div>
+            <div class="kpi-trend-pill positive">
+              <span>● Sinxron</span> <span style="color: #64748b; font-weight: normal;">oxirgi: bugun 08:30</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 8px;">
+              Qonunlar, Kodekslar, Oliy Sud qarorlari
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics & Live Feed Grid -->
+        <div class="admin-analytics-grid">
+          <!-- Left: Weekly Chart -->
+          <div class="card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 1.05rem;">Haftalik AI So‘rovlar Dinamikasi</h3>
+              <span class="badge badge-blue">Oxirgi 7 kun</span>
+            </div>
+            
+            <div class="bar-chart-container">
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 52%;" title="Dushanba: 5,200 so‘rov"></div>
+                <span class="bar-label">Dush</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 68%;" title="Seshanba: 6,800 so‘rov"></div>
+                <span class="bar-label">Sesh</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 74%;" title="Chorshanba: 7,400 so‘rov"></div>
+                <span class="bar-label">Chor</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 86%;" title="Payshanba: 8,600 so‘rov"></div>
+                <span class="bar-label">Pay</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 94%;" title="Juma: 9,400 so‘rov"></div>
+                <span class="bar-label">Juma</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 40%; background: #94a3b8;" title="Shanba: 4,000 so‘rov"></div>
+                <span class="bar-label">Shan</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="height: 35%; background: #94a3b8;" title="Yakshanba: 3,500 so‘rov"></div>
+                <span class="bar-label">Yak</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 0.8rem; color: #64748b;">
+              <span>Eng ko‘p so‘ralgan soha: <strong>Tadbirkorlik va Shartnomalar (42%)</strong></span>
+              <span>Eng kam so‘ralgan: <strong>Notarial harakatlar (6%)</strong></span>
+            </div>
+          </div>
+
+          <!-- Right: Live Activity Stream -->
+          <div class="card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h3 style="font-size: 1.05rem;">Jonli Tizim Faolligi</h3>
+              <span class="status-dot-pulse"></span>
+            </div>
+
+            <div class="activity-feed-list">
+              <div class="activity-feed-item">
+                <div class="feed-dot-pulse" style="background: #10b981;"></div>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 600; color: #1e293b;">Otabek Fayzullayev mehnat nizosi arizasini tuzdi</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">MK 161-modda bo‘yicha • 3 daqiqa oldin</div>
+                </div>
+              </div>
+
+              <div class="activity-feed-item">
+                <div class="feed-dot-pulse" style="background: #2563eb;"></div>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 600; color: #1e293b;">ABC Textile shartnomasi muvaffaqiyatli redline qilindi</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">8.3-band xavfsiz holatga keltirildi • 12 daqiqa oldin</div>
+                </div>
+              </div>
+
+              <div class="activity-feed-item">
+                <div class="feed-dot-pulse" style="background: #f59e0b;"></div>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 600; color: #1e293b;">Yangi advokat Jamshid Aliyev arizasi kutilmoqda</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Litsenziya № ADV-2024-884 • 28 daqiqa oldin</div>
+                </div>
+              </div>
+
+              <div class="activity-feed-item">
+                <div class="feed-dot-pulse" style="background: #7c3aed;"></div>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 600; color: #1e293b;">Lex.uz Soliq Kodeksi 227-modda o‘zgarishi kiritildi</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Vektor indeksi avtomatik yangilandi • 1 soat oldin</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 2: Users & RBAC Management
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-users" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h2>Foydalanuvchilar va Rollar Boshqaruvi (RBAC)</h2>
+            <p>Tizimga kirish huquqlarini boshqaring, yangi foydalanuvchilar qo‘shing yoki bloklang.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openAddUserModal()">
+            + Yangi Foydalanuvchi Qo‘shish
           </button>
         </div>
 
-        <!-- Metrics -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px;">
-          <div class="card" style="padding: 18px;">
-            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Faol Xodimlar</div>
-            <div style="font-size: 1.8rem; font-weight: 800; color: #1e3a8a; margin-top: 4px;">3 / 10</div>
-            <div style="font-size: 0.78rem; color: #10b981; margin-top: 4px;">7 ta bo‘sh litsenziya mavjud</div>
-          </div>
-          <div class="card" style="padding: 18px;">
-            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Tahlil Qilingan Hujjatlar</div>
-            <div style="font-size: 1.8rem; font-weight: 800; color: #047857; margin-top: 4px;">148 ta</div>
-            <div style="font-size: 0.78rem; color: #64748b; margin-top: 4px;">Barcha xodimlar tomonidan</div>
-          </div>
-          <div class="card" style="padding: 18px;">
-            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Xavfsizlik Ko‘rsatkichi</div>
-            <div style="font-size: 1.8rem; font-weight: 800; color: #2563eb; margin-top: 4px;">100%</div>
-            <div style="font-size: 0.78rem; color: #10b981; margin-top: 4px;">Barcha akkauntlar 2FA himoyasida</div>
-          </div>
+        <!-- Filter bar -->
+        <div class="admin-filter-bar">
+          <button class="filter-pill-btn active" onclick="filterUsers('ALL', this)">Barchasi (1,420)</button>
+          <button class="filter-pill-btn" onclick="filterUsers('CITIZEN', this)">👤 Fuqarolar (1,150)</button>
+          <button class="filter-pill-btn" onclick="filterUsers('LAWYER', this)">⚖️ Yuristlar (85)</button>
+          <button class="filter-pill-btn" onclick="filterUsers('ORG_MEMBER', this)">🏢 Biznes Xodimlari (182)</button>
+          <button class="filter-pill-btn" onclick="filterUsers('ORG_ADMIN', this)">🛡️ Adminlar (3)</button>
         </div>
 
         <div class="card">
-          <table class="compliance-matrix-table">
+          <table class="compliance-matrix-table" id="users-table">
             <thead>
               <tr>
-                <th>Xodim Ismi</th>
+                <th>Foydalanuvchi</th>
                 <th>Elektron Pochta</th>
-                <th>Lavozimi</th>
+                <th>Tashkilot / Maqom</th>
                 <th>Tizim Roli</th>
                 <th>Holat</th>
-                <th>Harakat</th>
+                <th>Harakatlar</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td><strong>Azamat Usmonov</strong></td>
+            <tbody id="admin-users-tbody">
+              <!-- Azamat Usmonov -->
+              <tr data-role="ORG_ADMIN">
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #1e40af;">AU</div>
+                    <strong>Azamat Usmonov</strong>
+                  </div>
+                </td>
                 <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">azamat.admin@abctextile.uz</td>
-                <td>Bosh Yuridik Maslahatchi</td>
-                <td><span class="badge badge-blue">ORG_ADMIN</span></td>
+                <td>ABC Textile MCHJ (Bosh Yurist)</td>
+                <td><span class="badge badge-blue">SUPERADMIN</span></td>
                 <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
-                <td><button class="btn btn-secondary btn-sm" onclick="alert('Admin huquqlarini o‘zgartirib bo‘lmaydi')">Sozlash</button></td>
+                <td>
+                  <button class="btn btn-secondary btn-sm" onclick="alert('Bosh admin ruxsatlari himoyalangan!')">Himoyalangan</button>
+                </td>
               </tr>
-              <tr>
-                <td><strong>Malika Saidova</strong></td>
+              <!-- Sardor Rahimov -->
+              <tr data-role="LAWYER">
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #1d4ed8;">SR</div>
+                    <strong>Sardor Rahimov</strong>
+                  </div>
+                </td>
+                <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">sardor.lawyer@barrister.uz</td>
+                <td>Barrister Law Firm (Mustaqil Advokat)</td>
+                <td><span class="badge badge-blue">LAWYER</span></td>
+                <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
+                <td>
+                  <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(this)">Bloklash</button>
+                </td>
+              </tr>
+              <!-- Malika Saidova -->
+              <tr data-role="ORG_MEMBER">
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #059669;">MS</div>
+                    <strong>Malika Saidova</strong>
+                  </div>
+                </td>
                 <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">malika.hr@abctextile.uz</td>
-                <td>HR Bo‘limi Boshlig‘i</td>
+                <td>ABC Textile MCHJ (HR Rahbari)</td>
                 <td><span class="badge badge-green">ORG_MEMBER</span></td>
                 <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
-                <td><button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Xodim ruxsatlari yangilandi', 'info')">Ruxsatlar</button></td>
+                <td>
+                  <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(this)">Bloklash</button>
+                </td>
               </tr>
-              <tr>
-                <td><strong>Bekzod Qosimov</strong></td>
-                <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">bekzod@abctextile.uz</td>
-                <td>Moliyaviy Nazoratchi</td>
-                <td><span class="badge badge-green">ORG_MEMBER</span></td>
+              <!-- Otabek Fayzullayev -->
+              <tr data-role="CITIZEN">
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #0284c7;">OF</div>
+                    <strong>Otabek Fayzullayev</strong>
+                  </div>
+                </td>
+                <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">otabek@gmail.com</td>
+                <td>Fuqaro (Toshkent Sh.)</td>
+                <td><span class="badge badge-green">CITIZEN</span></td>
                 <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
-                <td><button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Xodim ruxsatlari yangilandi', 'info')">Ruxsatlar</button></td>
+                <td>
+                  <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(this)">Bloklash</button>
+                </td>
+              </tr>
+              <!-- Nilufar Karimova -->
+              <tr data-role="LAWYER">
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #d97706;">NK</div>
+                    <strong>Nilufar Karimova</strong>
+                  </div>
+                </td>
+                <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">nilufar.tax@audit.uz</td>
+                <td>Audit Consult (Soliq Yuristi)</td>
+                <td><span class="badge badge-blue">LAWYER</span></td>
+                <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
+                <td>
+                  <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(this)">Bloklash</button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- TAB 2: Audit Logs -->
-      <section class="admin-tab-pane" id="apane-audit" style="display: none;">
+      <!-- =====================================================================
+           TAB 3: Lawyers Moderation
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-lawyers" style="display: none;">
         <div style="margin-bottom: 20px;">
-          <h2>Tizim Auditi va Xavfsizlik Jurnali (Audit Trail)</h2>
-          <p>Kompaniyadagi har bir huquqiy harakat va AI tahlili qat’iy qayd etiladi.</p>
+          <h2>Yuristlar va Advokatlar Moderatsiyasi</h2>
+          <p>Yangi ro‘yxatdan o‘tgan advokatlarning litsenziya arizalarini tekshiring va tasdiqlang.</p>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <!-- Applicant 1 -->
+          <div class="card" style="padding: 20px;" id="lawyer-card-1">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span class="badge badge-warning">Kutilmoqda (Arizachi)</span>
+                <h3 style="margin-top: 6px;">Jamshid Aliyev</h3>
+                <div style="font-size: 0.82rem; color: #2563eb; font-weight: 600;">Iqtisodiy sudlar & Arbitraj mutaxassisi</div>
+              </div>
+              <div style="font-size: 0.75rem; color: #64748b;">Ariza: Bugun 11:20</div>
+            </div>
+
+            <div style="font-size: 0.84rem; color: #334155; margin-top: 12px; line-height: 1.6;">
+              <strong>Litsenziya №:</strong> ADV-2024-884 (Samarqand viloyati Adliya boshqarmasi)<br>
+              <strong>Tajriba:</strong> 15 yil • 210 dan ortiq muvaffaqiyatli sud ishlari<br>
+              <strong>Ilova qilingan hujjat:</strong> <a href="#" onclick="alert('Litsenziya hujjati nusxasi tekshirildi (PDF)'); return false;" style="color: #2563eb;">license_jamshid_aliyev.pdf</a>
+            </div>
+
+            <div style="margin-top: 16px; display: flex; gap: 10px;" id="action-btns-1">
+              <button class="btn btn-primary btn-sm" onclick="approveLawyer(1, 'Jamshid Aliyev')" style="flex: 1;">
+                ✓ Litsenziyani Tasdiqlash
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="rejectLawyer(1, 'Jamshid Aliyev')" style="color: #ef4444; border-color: #fca5a5;">
+                ✕ Rad Etish
+              </button>
+            </div>
+          </div>
+
+          <!-- Applicant 2 -->
+          <div class="card" style="padding: 20px;" id="lawyer-card-2">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span class="badge badge-warning">Kutilmoqda (Arizachi)</span>
+                <h3 style="margin-top: 6px;">Shahnoza Rustamova</h3>
+                <div style="font-size: 0.82rem; color: #2563eb; font-weight: 600;">Mehnat nizolari & Fuqarolik huquqi</div>
+              </div>
+              <div style="font-size: 0.75rem; color: #64748b;">Ariza: Kecha 18:40</div>
+            </div>
+
+            <div style="font-size: 0.84rem; color: #334155; margin-top: 12px; line-height: 1.6;">
+              <strong>Litsenziya №:</strong> ADV-2025-102 (Toshkent shahar Adliya boshqarmasi)<br>
+              <strong>Tajriba:</strong> 7 yil • Korporativ kadrlar auditi<br>
+              <strong>Ilova qilingan hujjat:</strong> <a href="#" onclick="alert('Litsenziya hujjati nusxasi tekshirildi (PDF)'); return false;" style="color: #2563eb;">license_shahnoza_rustamova.pdf</a>
+            </div>
+
+            <div style="margin-top: 16px; display: flex; gap: 10px;" id="action-btns-2">
+              <button class="btn btn-primary btn-sm" onclick="approveLawyer(2, 'Shahnoza Rustamova')" style="flex: 1;">
+                ✓ Litsenziyani Tasdiqlash
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="rejectLawyer(2, 'Shahnoza Rustamova')" style="color: #ef4444; border-color: #fca5a5;">
+                ✕ Rad Etish
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 4: Lex.uz & RAG Sync Hub
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-lexsync" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h2>Lex.uz Qonunlar Bazasi va Vektor RAG Sinxronizatsiyasi</h2>
+            <p>O‘zbekiston Respublikasi rasmiy qonunchilik portali bilan real vaqt sinxron holati.</p>
+          </div>
+          <button class="btn btn-primary" id="btn-sync-trigger" onclick="triggerLexSync()">
+            🔄 Hozir Sinxronlash
+          </button>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span class="badge badge-green" id="sync-status-badge">✓ 100% Sinxronlangan</span>
+              <h3 style="margin-top: 8px;">Rasmiy Lex.uz Parser & Embedding Engine</h3>
+              <p style="font-size: 0.85rem; color: #64748b;">48,250 ta modda va rasmiy tahrir vektor bazasida to‘liq indekslangan.</p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.4rem; font-weight: 800; color: #1e3a8a;" id="sync-articles-count">48,250 / 48,250</div>
+              <span style="font-size: 0.75rem; color: #10b981;" id="sync-last-time">Oxirgi tekshiruv: Bugun, 08:30</span>
+            </div>
+          </div>
+
+          <!-- Animated Progress Bar -->
+          <div class="sync-progress-box">
+            <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 600;">
+              <span id="sync-progress-label">Baza yangi me’yoriy hujjatlar bilan to‘liq mos</span>
+              <span id="sync-progress-pct">100%</span>
+            </div>
+            <div class="sync-bar-track">
+              <div class="sync-bar-fill" id="sync-bar-indicator" style="width: 100%;"></div>
+            </div>
+            <div style="font-size: 0.72rem; color: #64748b;">
+              Manbalar: Lex.uz • Adliya Vazirligi • Oliy Sud Plenumi Qarorlari • Soliq Kodeksi
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+          <div class="card-header">
+            <h3>So‘nggi Sinxronlangan Qonunchilik Hujjatlari</h3>
+          </div>
+          <table class="compliance-matrix-table">
+            <thead>
+              <tr>
+                <th>Hujjat Turi / Kodi</th>
+                <th>Qonun Nomi</th>
+                <th>Kuchga Kirgan Sana</th>
+                <th>Ta’sirlangan Moddalar</th>
+                <th>Holat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="legal-citation">SK 227-1-modda</span></td>
+                <td>Soliq Kodeksi (Fiskal talablar va EHF tartibi)</td>
+                <td>2026-yil 1-oktyabr</td>
+                <td>227-1, 227-2 moddalar</td>
+                <td><span class="badge badge-green">Indekslangan</span></td>
+              </tr>
+              <tr>
+                <td><span class="legal-citation">MK 161-modda</span></td>
+                <td>Mehnat Kodeksi (Mehnat shartnomasini bekor qilish)</td>
+                <td>2023-yil 30-aprel</td>
+                <td>161-modda (Yangi tahrir)</td>
+                <td><span class="badge badge-green">Indekslangan</span></td>
+              </tr>
+              <tr>
+                <td><span class="legal-citation">FK 333-modda</span></td>
+                <td>Fuqarolik Kodeksi (Majburiyat buzilishi javobgarligi)</td>
+                <td>1997-yil 1-mart</td>
+                <td>333, 327-moddalar</td>
+                <td><span class="badge badge-green">Indekslangan</span></td>
+              </tr>
+              <tr>
+                <td><span class="legal-citation">PF-112</span></td>
+                <td>O‘zR Prezidentining Tadbirkorlikni rivojlantirish to‘g‘risidagi Farmoni</td>
+                <td>2026-yil avgust</td>
+                <td>14 ta nizom moddalari</td>
+                <td><span class="badge badge-green">Indekslangan</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 5: AI Models & Token Monitoring
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-aimodels" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h2>AI Modellari va Tokenlar Nazorati</h2>
+          <p>Yuridik mantiq, Zero-Hallucination va API resurslarini boshqarish.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px;">
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Bugun Sarflangan Tokenlar</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #1e3a8a; margin-top: 4px;">2,410,500</div>
+            <div style="font-size: 0.78rem; color: #10b981; margin-top: 4px;">Oylik limitning 34% qismi</div>
+          </div>
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Zero-Hallucination Guardrail</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #047857; margin-top: 4px;">100% Faol</div>
+            <div style="font-size: 0.78rem; color: #047857; margin-top: 4px;">Moddaga asoslanmagan javoblar bloklanadi</div>
+          </div>
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">O‘rtacha Javob Tezligi</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2563eb; margin-top: 4px;">290 ms</div>
+            <div style="font-size: 0.78rem; color: #2563eb; margin-top: 4px;">Gemini 1.5 Pro + Flash orkestratsiyasi</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <h3 style="margin-bottom: 16px;">AI Model Sozlamalari</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Birlamchi Huquqiy Tahlil Modeli:</label>
+              <select class="form-input-box" style="margin-top: 6px;">
+                <option selected>Google Gemini 1.5 Pro (Tavsiya etiladi - Yuridik chuqur tahlil)</option>
+                <option>Claude 3.5 Sonnet (Muqobil)</option>
+                <option>GPT-4o (Muqobil)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Tezkor Chat Modeli (Fuqaro portali):</label>
+              <select class="form-input-box" style="margin-top: 6px;">
+                <option selected>Google Gemini 1.5 Flash (Tezkor va tejamkor)</option>
+                <option>GPT-4o Mini</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <label style="font-weight: 700; font-size: 0.85rem;">Model Harorati (Temperature): <strong>0.1 (Qat’iy faktlarga asoslangan)</strong></label>
+            <input type="range" min="0" max="1" step="0.1" value="0.1" style="width: 100%; margin-top: 8px;" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 4px;">
+              <span>0.0 (Faqat qonun matni)</span>
+              <span>0.5 (Balanslashgan)</span>
+              <span>1.0 (Ijodiy - Huquqda tavsiya etilmaydi)</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="margin-top: 20px;" onclick="UIComponents.showToast('AI Model sozlamalari yangilandi!', 'success')">
+            Sozlamalarni Saqlash
+          </button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 6: Audit Logs & Security
+           ===================================================================== -->
+      <section class="admin-tab-pane" id="apane-audit" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h2>Tizim Auditi va Xavfsizlik Jurnali (Audit Trail)</h2>
+            <p>Kompaniyadagi har bir huquqiy harakat, IP manzil va AI xulosasi qat’iy qayd etiladi.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="exportAuditLogs()">
+            📥 CSV Qilib Yuklash
+          </button>
+        </div>
+
         <div class="card">
           <table class="compliance-matrix-table">
             <thead>
               <tr>
                 <th>Vaqt (Timestamp)</th>
                 <th>Foydalanuvchi</th>
+                <th>IP Manzil</th>
                 <th>Harakat</th>
                 <th>Obyekt / Fayl</th>
                 <th>Natija</th>
@@ -211,22 +706,33 @@
             </thead>
             <tbody>
               <tr>
-                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-09-29 14:22:10</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-10-01 14:18:22</td>
                 <td>Azamat Usmonov</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">195.158.12.44</td>
+                <td>Tizim sozlamalari ko‘rildi</td>
+                <td>Admin Panel (RBAC)</td>
+                <td><span class="badge badge-green">Muvaffaqiyatli</span></td>
+              </tr>
+              <tr>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-10-01 13:45:10</td>
+                <td>Malika Saidova</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">84.54.80.12</td>
                 <td>Shartnoma Redline qabul qilindi</td>
                 <td>Axborot xizmatlari #42-UZ (8.3-band)</td>
                 <td><span class="badge badge-green">Muvaffaqiyatli</span></td>
               </tr>
               <tr>
-                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-09-29 11:15:40</td>
-                <td>Malika Saidova</td>
-                <td>HR Nizomi RAG so‘rovi</td>
-                <td>HR-REG-2026.pdf</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-10-01 11:15:40</td>
+                <td>Otabek Fayzullayev</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">213.230.77.19</td>
+                <td>Mehnat nizosi arizasi generatsiyasi</td>
+                <td>MK 161-modda (Ariza)</td>
                 <td><span class="badge badge-blue">Tahlil olindi</span></td>
               </tr>
               <tr>
-                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-09-28 22:40:02</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">2026-09-30 22:40:02</td>
                 <td>System (Compliance)</td>
+                <td style="font-family: var(--font-mono); font-size: 0.8rem;">127.0.0.1 (Ichki)</td>
                 <td>Yangi Lex.uz qonun o‘zgarishi deteksiyasi</td>
                 <td>№ O‘RQ-954 (Soliq)</td>
                 <td><span class="badge badge-warning">Alert yuborildi</span></td>
@@ -236,48 +742,145 @@
         </div>
       </section>
 
-      <!-- TAB 3: Billing & Subscription -->
+      <!-- =====================================================================
+           TAB 7: Billing & Revenue
+           ===================================================================== -->
       <section class="admin-tab-pane" id="apane-billing" style="display: none;">
         <div style="margin-bottom: 20px;">
-          <h2>Tariflar va Obuna (Billing)</h2>
-          <p>Kompaniyangiz LegalOS platformasida <strong>Business Plan</strong> tarifida ishlamoqda.</p>
+          <h2>Tariflar, Obunalar va Tushumlar (Billing)</h2>
+          <p>Kompaniyalar va yuristlar to‘lovlari, litsenziyalar balansi.</p>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px;">
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Joriy Oydagi Tushum</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #047857; margin-top: 4px;">48,500,000 UZS</div>
+            <div style="font-size: 0.78rem; color: #047857; margin-top: 4px;">+18% o‘tgan oyga nisbatan</div>
+          </div>
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Faol Korporativ Korxonalar</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #1e3a8a; margin-top: 4px;">185 ta</div>
+            <div style="font-size: 0.78rem; color: #1e3a8a; margin-top: 4px;">Business & Enterprise tariflarida</div>
+          </div>
+          <div class="card" style="padding: 18px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Yillik Yangilanish Ko‘rsatkichi</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2563eb; margin-top: 4px;">96.4%</div>
+            <div style="font-size: 0.78rem; color: #2563eb; margin-top: 4px;">Yuqori mijoz sodiqligi</div>
+          </div>
+        </div>
+
         <div class="card" style="padding: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px;">
             <div>
               <span class="badge badge-green">Faol Obuna</span>
-              <h3 style="margin-top: 6px; font-size: 1.25rem;">Business Pro Tier (Yillik)</h3>
-              <p style="font-size: 0.85rem; color: #64748b;">10 tagacha foydalanuvchi, cheksiz Contract Intelligence, Proaktiv Compliance.</p>
+              <h3 style="margin-top: 6px; font-size: 1.25rem;">Korxona Tarifi: ABC Textile MCHJ (Business Pro Tier)</h3>
+              <p style="font-size: 0.85rem; color: #64748b;">10 tagacha xodim litsenziyasi, cheksiz Contract Intelligence, Proaktiv Compliance.</p>
             </div>
             <div style="text-align: right;">
               <div style="font-size: 1.6rem; font-weight: 800; color: #1e3a8a;">1,450,000 UZS / oy</div>
-              <span style="font-size: 0.75rem; color: #64748b;">Keyingi to‘lov: 2026-yil 1-noyabr</span>
+              <span style="font-size: 0.75rem; color: #64748b;">Keyingi avtomatik to‘lov: 2026-yil 1-noyabr</span>
             </div>
           </div>
           <div style="margin-top: 16px; display: flex; gap: 12px;">
-            <button class="btn btn-secondary btn-sm" onclick="alert('Hisob-faktura (Invoice) yuklandi')">Oxirgi Invoiceni Yuklab Olish (PDF)</button>
-            <button class="btn btn-primary btn-sm" onclick="UIComponents.showToast('Enterprise tarifiga so‘rov yuborildi', 'info')">Enterprise Rejimiga Yangilash</button>
+            <button class="btn btn-secondary btn-sm" onclick="alert('Oxirgi hisob-faktura (Invoice #INV-2026-09) yuklab olindi!')">Oxirgi Invoiceni Yuklab Olish (PDF)</button>
+            <button class="btn btn-primary btn-sm" onclick="UIComponents.showToast('Enterprise kastomizatsiya so‘rovi yuborildi', 'info')">Enterprise Rejimiga Yangilash</button>
           </div>
         </div>
       </section>
 
-      <!-- TAB 4: API & Integrations -->
+      <!-- =====================================================================
+           TAB 8: API & Integrations
+           ===================================================================== -->
       <section class="admin-tab-pane" id="apane-api" style="display: none;">
         <div style="margin-bottom: 20px;">
           <h2>Tashqi Tizimlar bilan API Integratsiyasi</h2>
           <p>1C Buxgalteriya, HRM yoki korporativ ERP tizimingizga LegalOS yuridik aqlini to‘g‘ridan-to‘g‘ri ulang.</p>
         </div>
-        <div class="card" style="padding: 24px;">
-          <label style="font-weight: 700; font-size: 0.85rem;">Faol API Token (Secret):</label>
+
+        <div class="card" style="padding: 24px; margin-bottom: 20px;">
+          <label style="font-weight: 700; font-size: 0.85rem;">Faol Ishlab Chiqarish (Production) API Token:</label>
           <div style="display: flex; gap: 10px; margin-top: 6px; margin-bottom: 14px;">
-            <input type="text" class="form-input-box" value="los_live_9f81a72d38bc9e10294711afbc8" readonly style="font-family: var(--font-mono); background: #f8fafc;" />
-            <button class="btn btn-secondary" onclick="UIComponents.showToast('API kalit nusxalandi', 'success')">Nusxalash</button>
+            <input type="text" id="api-key-input" class="form-input-box" value="los_live_9f81a72d38bc9e10294711afbc8" readonly style="font-family: var(--font-mono); background: #f8fafc;" />
+            <button class="btn btn-secondary" onclick="copyApiKey()">Nusxalash</button>
+            <button class="btn btn-primary" onclick="generateNewApiKey()">Yangi Kalit Yaratish</button>
           </div>
-          <span class="badge badge-green">Ruxsatlar: To‘liq Shartnomalar va Nazorat O‘qish/Yozish</span>
+          <span class="badge badge-green">Ruxsatlar: To‘liq Shartnomalar, Redline va Compliance O‘qish/Yozish</span>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <h3 style="margin-bottom: 14px;">Rasmiy Webhook & Tizim Integratsiyalari</h3>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div style="border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong>🆔 OneID Integratsiyasi</strong>
+                <span class="badge badge-green">Faol</span>
+              </div>
+              <p style="font-size: 0.78rem; color: #64748b; margin-top: 6px;">Yagona identifikatsiya tizimi orqali avtorizatsiya.</p>
+            </div>
+
+            <div style="border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong>🏛️ Soliq.uz EHF Moduli</strong>
+                <span class="badge badge-green">Faol</span>
+              </div>
+              <p style="font-size: 0.78rem; color: #64748b; margin-top: 6px;">Elektron hisob-fakturalar avtomatik sinxronlanadi.</p>
+            </div>
+
+            <div style="border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong>💼 1C:Enterprise Ulagichi</strong>
+                <span class="badge badge-blue">Ulandi</span>
+              </div>
+              <p style="font-size: 0.78rem; color: #64748b; margin-top: 6px;">Korporativ shartnomalar tahliliga to‘g‘ridan-to‘g‘ri oqim.</p>
+            </div>
+          </div>
         </div>
       </section>
 
     </main>
+  </div>
+</div>
+
+<!-- =========================================================================
+     MODAL: Add New User
+     ========================================================================= -->
+<div class="modal-overlay" id="modal-add-user" onclick="if(event.target===this) closeAddUserModal()">
+  <div class="modal-card">
+    <div class="drawer-header">
+      <h3>+ Yangi Foydalanuvchi Qo‘shish</h3>
+      <button class="btn btn-secondary btn-sm" onclick="closeAddUserModal()">✕</button>
+    </div>
+    <form onsubmit="handleCreateUser(event)" style="padding: 24px;">
+      <div class="form-field-group">
+        <label class="form-field-label">Ism-familiya:</label>
+        <input type="text" id="new-user-name" class="form-field-input" placeholder="Masalan: Dilshod Qodirov" required />
+      </div>
+
+      <div class="form-field-group">
+        <label class="form-field-label">Elektron pochta manzili:</label>
+        <input type="email" id="new-user-email" class="form-field-input" placeholder="dilshod@kompaniya.uz" required />
+      </div>
+
+      <div class="form-field-group">
+        <label class="form-field-label">Tizim Roli:</label>
+        <select id="new-user-role" class="form-field-input" style="padding: 10px;">
+          <option value="ORG_MEMBER">🏢 Biznes Xodimi (ORG_MEMBER)</option>
+          <option value="LAWYER">⚖️ Yurist / Advokat (LAWYER)</option>
+          <option value="CITIZEN">👤 Fuqaro (CITIZEN)</option>
+          <option value="ORG_ADMIN">🛡️ Admin (ORG_ADMIN)</option>
+        </select>
+      </div>
+
+      <div class="form-field-group">
+        <label class="form-field-label">Tashkilot yoki Lavozimi:</label>
+        <input type="text" id="new-user-org" class="form-field-input" placeholder="Masalan: Yuridik bo‘lim mutaxassisi" />
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button type="button" class="btn btn-secondary" onclick="closeAddUserModal()">Bekor qilish</button>
+        <button type="submit" class="btn btn-primary">Foydalanuvchini Saqlash</button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -292,6 +895,180 @@
     const target = document.getElementById('apane-' + tabName);
     if (target) target.style.display = 'block';
     if (btn) btn.classList.add('active');
+  }
+
+  // Filter users by role
+  function filterUsers(role, btn) {
+    document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const rows = document.querySelectorAll('#admin-users-tbody tr');
+    rows.forEach(row => {
+      if (role === 'ALL' || row.getAttribute('data-role') === role) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  // Toggle user status active/blocked
+  function toggleUserStatus(btn) {
+    const row = btn.closest('tr');
+    const statusCell = row.children[4];
+    if (btn.textContent === 'Bloklash') {
+      btn.textContent = 'Faollashtirish';
+      btn.style.color = '#059669';
+      statusCell.innerHTML = '<span style="color: #ef4444; font-weight: 600;">● Bloklangan</span>';
+      UIComponents.showToast('Foydalanuvchi vaqtincha bloklandi', 'info');
+    } else {
+      btn.textContent = 'Bloklash';
+      btn.style.color = '';
+      statusCell.innerHTML = '<span style="color: #10b981; font-weight: 600;">● Faol</span>';
+      UIComponents.showToast('Foydalanuvchi qayta faollashtirildi', 'success');
+    }
+  }
+
+  // Lawyer moderation approve / reject
+  function approveLawyer(id, name) {
+    const card = document.getElementById('lawyer-card-' + id);
+    const actionBox = document.getElementById('action-btns-' + id);
+    if (card && actionBox) {
+      actionBox.innerHTML = `
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: var(--radius-md); padding: 8px 12px; color: #047857; font-weight: 700; width: 100%; text-align: center;">
+          ✓ Litsenziya Tasdiqlandi (Faol Advokat)
+        </div>
+      `;
+      const badge = card.querySelector('.badge');
+      if (badge) {
+        badge.className = 'badge badge-green';
+        badge.textContent = 'Tasdiqlangan Yurist';
+      }
+      UIComponents.showToast(`${name} rasmiy advokat sifatida tasdiqlandi!`, 'success');
+    }
+  }
+
+  function rejectLawyer(id, name) {
+    const card = document.getElementById('lawyer-card-' + id);
+    const actionBox = document.getElementById('action-btns-' + id);
+    if (card && actionBox) {
+      actionBox.innerHTML = `
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius-md); padding: 8px 12px; color: #b91c1c; font-weight: 700; width: 100%; text-align: center;">
+          ✕ Ariza Rad Etildi
+        </div>
+      `;
+      const badge = card.querySelector('.badge');
+      if (badge) {
+        badge.className = 'badge badge-danger';
+        badge.textContent = 'Rad Etilgan';
+      }
+      UIComponents.showToast(`${name} arizasi rad etildi`, 'info');
+    }
+  }
+
+  // Trigger Lex.uz Sync with animated progress
+  function triggerLexSync() {
+    const btn = document.getElementById('btn-sync-trigger');
+    const badge = document.getElementById('sync-status-badge');
+    const label = document.getElementById('sync-progress-label');
+    const pct = document.getElementById('sync-progress-pct');
+    const bar = document.getElementById('sync-bar-indicator');
+
+    if (btn) btn.disabled = true;
+    if (badge) {
+      badge.className = 'badge badge-blue';
+      badge.textContent = '🔄 Sinxronlanmoqda...';
+    }
+
+    if (bar) bar.style.width = '15%';
+    if (pct) pct.textContent = '15%';
+    if (label) label.textContent = 'Lex.uz yangi normativ hujjatlari tekshirilmoqda...';
+
+    setTimeout(() => {
+      if (bar) bar.style.width = '55%';
+      if (pct) pct.textContent = '55%';
+      if (label) label.textContent = 'Qonun moddalari semantik indekslanmoqda va embeddinglar hisoblanmoqda...';
+    }, 700);
+
+    setTimeout(() => {
+      if (bar) bar.style.width = '100%';
+      if (pct) pct.textContent = '100%';
+      if (label) label.textContent = 'Lex.uz bazasi bilan 100% to‘liq sinxronlandi!';
+      if (badge) {
+        badge.className = 'badge badge-green';
+        badge.textContent = '✓ 100% Sinxronlangan';
+      }
+      if (btn) btn.disabled = false;
+      UIComponents.showToast('Lex.uz qonunlar bazasi va RAG vektor indeksi muvaffaqiyatli yangilandi!', 'success');
+    }, 1500);
+  }
+
+  // Copy API key
+  function copyApiKey() {
+    const input = document.getElementById('api-key-input');
+    if (input) {
+      navigator.clipboard.writeText(input.value);
+      UIComponents.showToast('API kaliti clipboardga nusxalandi!', 'success');
+    }
+  }
+
+  // Generate new API key
+  function generateNewApiKey() {
+    const input = document.getElementById('api-key-input');
+    if (input) {
+      const newKey = 'los_live_' + Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
+      input.value = newKey;
+      UIComponents.showToast('Yangi API kalit yaratildi va faollashtirildi!', 'success');
+    }
+  }
+
+  // Export audit logs
+  function exportAuditLogs() {
+    UIComponents.showToast('Audit loglari (CSV) muvaffaqiyatli shakllantirildi va yuklandi!', 'success');
+  }
+
+  // Add User Modal
+  function openAddUserModal() {
+    const m = document.getElementById('modal-add-user');
+    if (m) m.classList.add('active');
+  }
+
+  function closeAddUserModal() {
+    const m = document.getElementById('modal-add-user');
+    if (m) m.classList.remove('active');
+  }
+
+  function handleCreateUser(e) {
+    e.preventDefault();
+    const name = document.getElementById('new-user-name').value;
+    const email = document.getElementById('new-user-email').value;
+    const role = document.getElementById('new-user-role').value;
+    const org = document.getElementById('new-user-org').value || 'LegalOS Foydalanuvchisi';
+
+    const tbody = document.getElementById('admin-users-tbody');
+    if (tbody) {
+      const tr = document.createElement('tr');
+      tr.setAttribute('data-role', role);
+      tr.innerHTML = `
+        <td>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem; background: #2563eb;">${name.split(' ').map(n=>n[0]).join('')}</div>
+            <strong>${name}</strong>
+          </div>
+        </td>
+        <td style="color: #64748b; font-family: var(--font-mono); font-size: 0.82rem;">${email}</td>
+        <td>${org}</td>
+        <td><span class="badge badge-green">${role}</span></td>
+        <td><span style="color: #10b981; font-weight: 600;">● Faol</span></td>
+        <td>
+          <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(this)">Bloklash</button>
+        </td>
+      `;
+      tbody.prepend(tr);
+    }
+
+    closeAddUserModal();
+    UIComponents.showToast(`${name} muvaffaqiyatli qo‘shildi!`, 'success');
   }
 </script>
 
