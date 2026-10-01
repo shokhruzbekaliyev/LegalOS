@@ -94,22 +94,22 @@ function updateRoleDisplay(role) {
     userAvatar.textContent = 'OF';
     userAvatar.style.background = 'linear-gradient(135deg, #3b82f6, #0284c7)';
     userName.textContent = 'Otabek Fayzullayev';
-    userRole.textContent = 'CITIZEN • Fuqaro rejimi';
+    userRole.textContent = (window.i18n ? i18n.t('citizenUserRole') : '') || 'FUQARO • Oddiy fuqaro';
   } else if (role === 'LAWYER') {
     userAvatar.textContent = 'SR';
     userAvatar.style.background = 'linear-gradient(135deg, #1d4ed8, #2563eb)';
     userName.textContent = 'Sardor Rahimov';
-    userRole.textContent = 'LAWYER • Mustaqil Advokat';
+    userRole.textContent = (window.i18n ? i18n.t('lawyerUserRole') : '') || 'YURIST • Mustaqil Advokat';
   } else if (role === 'ORG_MEMBER') {
     userAvatar.textContent = 'MS';
     userAvatar.style.background = 'linear-gradient(135deg, #059669, #10b981)';
     userName.textContent = 'Malika Saidova';
-    userRole.textContent = 'ORG_MEMBER • HR Boshlig‘i';
+    userRole.textContent = (window.i18n ? i18n.t('memberUserRole') : '') || 'XODIM • HR Bo‘limi Boshlig‘i';
   } else if (role === 'ORG_ADMIN') {
     userAvatar.textContent = 'AU';
     userAvatar.style.background = 'linear-gradient(135deg, #1e40af, #047857)';
     userName.textContent = 'Azamat Usmonov';
-    userRole.textContent = 'ORG_ADMIN • ABC Textile';
+    userRole.textContent = (window.i18n ? i18n.t('adminUserRole') : '') || 'BOSH ADMIN • ABC Textile';
   }
 }
 
@@ -138,7 +138,7 @@ function renderChatMessages(messages) {
           ${isAssistant && msg.hasContractAction ? `
             <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; display: flex; gap: 8px;">
               <button class="btn btn-primary btn-sm" onclick="appState.setActiveTab('contracts')">
-                Contract Intelligence'da Ochish ➔
+                Shartnomalar Tahlilida Ochish ➔
               </button>
             </div>
           ` : ''}
@@ -172,7 +172,7 @@ function updateContractAcceptedUI() {
   const badge = document.getElementById('contract-status-badge');
   if (badge) {
     badge.className = 'badge badge-green';
-    badge.textContent = '✓ Muvofiqlashtirildi (Safe)';
+    badge.textContent = '✓ Muvofiqlashtirildi (Xavfsiz)';
   }
 
   const liveText = document.getElementById('contract-live-text');
@@ -190,7 +190,7 @@ function updateContractAcceptedUI() {
         <div style="color: #065f46; font-weight: 700; display: flex; align-items: center; gap: 8px;">
           <span style="font-size: 1.2rem;">✓</span> 8.3-band: Qonunchilikka to‘liq muvofiqlashtirildi
         </div>
-        <span class="badge badge-green">VERIFIED SAFE</span>
+        <span class="badge badge-green">XAVFSIZ TEKSHIRILDI</span>
       </div>
       <p style="font-size: 0.88rem; color: #047857; margin-top: 4px;">
         Bir tomonlama og‘ir shart bekor qilindi. O‘zbekiston FK 333-moddasi bo‘yicha tenglik va 10% lik jarima limiti o‘rnatildi.

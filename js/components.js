@@ -80,15 +80,15 @@ const UIComponents = {
         <!-- Node 3: Vazirlar Mahkamasi Qarori -->
         <g transform="translate(320, 250)" style="cursor: pointer;">
           <circle r="42" fill="url(#greenGrad)" filter="drop-shadow(0 4px 8px rgba(16,185,129,0.25))" />
-          <text text-anchor="middle" y="-4" fill="#ffffff" font-weight="600" font-size="11">Cabinet</text>
-          <text text-anchor="middle" y="12" fill="#ffffff" font-weight="600" font-size="11">Resolution</text>
+          <text text-anchor="middle" y="-4" fill="#ffffff" font-weight="600" font-size="11">Vazirlar</text>
+          <text text-anchor="middle" y="12" fill="#ffffff" font-weight="600" font-size="11">Mahkamasi</text>
         </g>
 
         <!-- Node 4: Sud Qarori (Court Decision) -->
         <g transform="translate(440, 170)" style="cursor: pointer;">
           <circle r="38" fill="url(#amberGrad)" filter="drop-shadow(0 4px 8px rgba(245,158,11,0.25))" />
-          <text text-anchor="middle" y="-4" fill="#ffffff" font-weight="600" font-size="11">Court</text>
-          <text text-anchor="middle" y="12" fill="#ffffff" font-weight="600" font-size="11">Precedent</text>
+          <text text-anchor="middle" y="-4" fill="#ffffff" font-weight="600" font-size="11">Sud</text>
+          <text text-anchor="middle" y="12" fill="#ffffff" font-weight="600" font-size="11">Pretsedenti</text>
         </g>
       </svg>
     `;

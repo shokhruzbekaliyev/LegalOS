@@ -28,33 +28,36 @@
         </div>
         <div class="logo-text-group">
           <span class="logo-title">Legal<span>OS</span></span>
-          <span class="logo-subtitle">Tashkilot Admini (ORG_ADMIN)</span>
+          <span class="logo-subtitle" data-i18n="portalSubtitleAdmin">Tashkilot Admini</span>
         </div>
       </a>
 
       <div class="header-search" style="width: 380px;">
         <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" placeholder="Xodimlar, audit jurnallari, billing yoki API sozlamalari..." />
+        <input type="text" data-i18n-placeholder="searchPlaceholderAdmin" placeholder="Xodimlar, audit jurnallari, billing yoki API sozlamalari..." />
       </div>
     </div>
 
     <div class="header-right">
+      <!-- Language Switcher [ O‘Z | РУ ] -->
+      <div id="admin-lang-switcher"></div>
+
       <span class="status-pill">
         <span class="status-dot-pulse"></span>
-        <span>RBAC & Audit: Himoyalangan</span>
+        <span data-i18n="protectedStatus">RBAC & Audit: Himoyalangan</span>
       </span>
 
       <div class="user-profile-menu">
         <div class="user-avatar" style="background: linear-gradient(135deg, #1e40af, #047857);">AU</div>
         <div class="user-info">
           <span class="user-name">Azamat Usmonov</span>
-          <span class="user-role-label">🛡️ ORG_ADMIN • Bosh Yurist</span>
+          <span class="user-role-label" data-i18n="adminUserRole">🛡️ BOSH ADMIN • Bosh Yurist</span>
         </div>
       </div>
 
       <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-        Chiqish
+        <span data-i18n="logout">Chiqish</span>
       </a>
     </div>
   </header>
@@ -63,13 +66,13 @@
     <!-- Sidebar -->
     <aside class="app-sidebar">
       <div>
-        <div class="sidebar-section-title">Ma'muriy Boshqaruv</div>
+        <div class="sidebar-section-title" data-i18n="navMainProcesses">Ma'muriy Boshqaruv</div>
         <ul class="sidebar-nav-list">
           <li>
             <button class="nav-item-btn active" onclick="switchAdminTab('users', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                Xodimlar va Rollar (RBAC)
+                <span data-i18n="workspaceTitle">Xodimlar va Rollar (RBAC)</span>
               </span>
               <span class="nav-badge-count">3 a'zo</span>
             </button>
@@ -78,7 +81,7 @@
             <button class="nav-item-btn" onclick="switchAdminTab('audit', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                Tizim Auditi va Loglar
+                <span data-i18n="navAuditLogs">Tizim Auditi va Loglar</span>
               </span>
             </button>
           </li>
@@ -86,16 +89,16 @@
             <button class="nav-item-btn" onclick="switchAdminTab('billing', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                Tariflar va Obuna
+                <span data-i18n="navBilling">Tariflar va Obuna</span>
               </span>
-              <span class="badge badge-green">Business Plan</span>
+              <span class="badge badge-green">Biznes Tarif</span>
             </button>
           </li>
           <li>
             <button class="nav-item-btn" onclick="switchAdminTab('api', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                API va Integratsiyalar
+                <span data-i18n="navApi">API va Integratsiyalar</span>
               </span>
             </button>
           </li>
@@ -270,7 +273,7 @@
             <input type="text" class="form-input-box" value="los_live_9f81a72d38bc9e10294711afbc8" readonly style="font-family: var(--font-mono); background: #f8fafc;" />
             <button class="btn btn-secondary" onclick="UIComponents.showToast('API kalit nusxalandi', 'success')">Nusxalash</button>
           </div>
-          <span class="badge badge-green">Ruxsatlar: Full Contracts & Compliance Read/Write</span>
+          <span class="badge badge-green">Ruxsatlar: To‘liq Shartnomalar va Nazorat O‘qish/Yozish</span>
         </div>
       </section>
 
@@ -278,6 +281,7 @@
   </div>
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script>

@@ -28,33 +28,36 @@
         </div>
         <div class="logo-text-group">
           <span class="logo-title">Legal<span>OS</span></span>
-          <span class="logo-subtitle">Fuqaro Portali (Citizen)</span>
+          <span class="logo-subtitle" data-i18n="portalSubtitleCitizen">Fuqaro Portali</span>
         </div>
       </a>
 
       <div class="header-search" style="width: 320px;">
         <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" placeholder="Qonuniy savolingizni yozing..." />
+        <input type="text" data-i18n-placeholder="searchPlaceholderCitizen" placeholder="Qonuniy savolingizni yozing..." />
       </div>
     </div>
 
     <div class="header-right">
+      <!-- Language Switcher [ O‘Z | РУ ] -->
+      <div id="citizen-lang-switcher"></div>
+
       <span class="status-pill">
         <span class="status-dot-pulse"></span>
-        <span>Lex.uz RAG: Faol</span>
+        <span data-i18n="activeStatus">Lex.uz RAG: Faol</span>
       </span>
 
       <div class="user-profile-menu">
         <div class="user-avatar" style="background: linear-gradient(135deg, #3b82f6, #0284c7);">OF</div>
         <div class="user-info">
           <span class="user-name">Otabek Fayzullayev</span>
-          <span class="user-role-label">👤 CITIZEN • Oddiy fuqaro</span>
+          <span class="user-role-label" data-i18n="citizenUserRole">👤 FUQARO • Oddiy fuqaro</span>
         </div>
       </div>
 
       <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-        Chiqish
+        <span data-i18n="logout">Chiqish</span>
       </a>
     </div>
   </header>
@@ -63,13 +66,13 @@
     <!-- Sidebar -->
     <aside class="app-sidebar">
       <div>
-        <div class="sidebar-section-title">Fuqaro Xizmatlari</div>
+        <div class="sidebar-section-title" data-i18n="navMainProcesses">Fuqaro Xizmatlari</div>
         <ul class="sidebar-nav-list">
           <li>
             <button class="nav-item-btn active" onclick="switchCitizenTab('chat', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                Huquqiy AI Yordamchi
+                <span data-i18n="navLegalChat">Huquqiy AI Maslahatchi</span>
               </span>
             </button>
           </li>
@@ -77,7 +80,7 @@
             <button class="nav-item-btn" onclick="switchCitizenTab('templates', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                Tayyor Ariza va Shablonlar
+                <span data-i18n="templatesTitle">Tayyor Ariza va Shablonlar</span>
               </span>
               <span class="nav-badge-count">12 ta</span>
             </button>
@@ -86,7 +89,7 @@
             <button class="nav-item-btn" onclick="switchCitizenTab('lawyers', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                Real Yurist Topish
+                <span data-i18n="findLawyerTitle">Real Yurist Topish</span>
               </span>
             </button>
           </li>
@@ -94,7 +97,7 @@
             <button class="nav-item-btn" onclick="switchCitizenTab('history', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                Mening Hujjatlarim
+                <span data-i18n="myDocumentsTitle">Mening Hujjatlarim</span>
               </span>
             </button>
           </li>
@@ -103,9 +106,9 @@
 
       <!-- Free Credits Status Widget -->
       <div class="sidebar-agent-widget" style="background: #f0fdf4; border-color: #a7f3d0;">
-        <div style="font-weight: 700; font-size: 0.82rem; color: #065f46; margin-bottom: 4px;">Free Rejim (Bepul)</div>
-        <p style="font-size: 0.75rem; color: #047857; line-height: 1.4;">
-          Sizda <strong>15 ta</strong> bepul savol va ariza generatsiyasi mavjud.
+        <div style="font-weight: 700; font-size: 0.82rem; color: #065f46; margin-bottom: 4px;" data-i18n="freeModeTitle">Bepul Rejim</div>
+        <p style="font-size: 0.75rem; color: #047857; line-height: 1.4;" data-i18n="freeModeDesc">
+          Sizda 15 ta bepul savol va ariza generatsiyasi mavjud.
         </p>
       </div>
     </aside>
@@ -118,10 +121,10 @@
         <div class="chat-view-layout">
           <div class="chat-header-bar">
             <div>
-              <h3 style="font-size: 1.05rem; color: #0f172a;">Fuqarolar uchun Huquqiy AI Maslahatchi</h3>
-              <p style="font-size: 0.8rem; color: #64748b;">Oddiy tilda tushuntiradi, qonun moddalariga asoslanadi.</p>
+              <h3 style="font-size: 1.05rem; color: #0f172a;" data-i18n="citizenTitle">Fuqarolar uchun Huquqiy AI Maslahatchi</h3>
+              <p style="font-size: 0.8rem; color: #64748b;" data-i18n="citizenSubtitle">Oddiy tilda tushuntiradi, qonun moddalariga asoslanadi.</p>
             </div>
-            <span class="badge badge-green">Zero-Hallucination</span>
+            <span class="badge badge-green" data-i18n="zeroHallucination">Zero-Hallucination Rejimi</span>
           </div>
 
           <div class="chat-messages-container" id="citizen-chat-box">
@@ -264,6 +267,7 @@
   </div>
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script>

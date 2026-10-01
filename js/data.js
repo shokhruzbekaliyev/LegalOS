@@ -62,8 +62,8 @@ const LegalData = {
     client: "ABC Textile MCHJ",
     counterparty: "Global Supply Cloud LLC",
     date: "2026-09-20",
-    status: "Ko'rib chiqilmoqda (Review required)",
-    riskScore: "High (1 ta jiddiy xavf)",
+    status: "Ko‘rib chiqilmoqda (Tahrir talab etiladi)",
+    riskScore: "Yuqori (1 ta jiddiy xavf)",
     clauses: [
       { id: "c1", num: "1-band", title: "Shartnoma predmeti", risk: "LOW" },
       { id: "c2", num: "2-band", title: "Xizmatlar qiymati va hisob-kitoblar", risk: "LOW" },
@@ -94,18 +94,18 @@ const LegalData = {
     },
     simulator: {
       lawyerAI: {
-        agent: "Your Lawyer AI",
+        agent: "Sizning Advokatingiz AI",
         tag: "Sizning asosiy argumentingiz",
         text: "Supplier LLC 2026-yil 12-avgustdagi shartnoma bo‘yicha 40 tonna paxta tolasini o‘z vaqtida yetkazib bermagan. Natijada korxona konveyeri 5 kunga to‘xtab, 180,000,000 so‘m to‘g‘ridan-to‘g‘ri zarar ko‘rildi. Dalil sifatida bank to‘lov topshirig‘i va kassa xarajatlari orderlari ilova qilindi.",
         citation: "FK-333"
       },
       opponentAI: {
-        agent: "Opponent AI",
+        agent: "Qarshi Tomon AI",
         tag: "Qarshi tomonning ehtimoliy himoyasi",
         text: "Kechikish temir yo‘l logistikasidagi rasmiy blokirovka (bojxona nazorati) tufayli sodir bo‘lganini va bu shartnomaning 9.1-bandiga ko‘ra fors-major holati deb topilishini da’vo qiladi. Shuningdek, 180 mln so‘m zararning hisob-kitob metodikasi bahsli deb ta’kidlanadi."
       },
       judgeAI: {
-        agent: "Judge AI (Stress-Test)",
+        agent: "Sudya AI (Stress-Test)",
         tag: "Sudya nuqtai nazaridan tekshiruv va kamchiliklar",
         status: "E'tibor talab bo'shliqlar aniqlandi",
         findings: [
@@ -131,12 +131,12 @@ const LegalData = {
     source: "Lex.uz (O‘zR Qonuni № O‘RQ-954)",
     dateDetected: "2026-09-28 22:40",
     summary: "2026-yil 1-oktyabrdan boshlab korxonalar o‘rtasida xizmat ko‘rsatish shartnomalarida elektron hisob-faktura (EHF) va fiskal rekvizitlarni kiritish majburiy tartibga aylandi.",
-    impactSummary: "Ta’sir: 14 ta shartnoma • 1 ta Accounting Policy • 3 ta HR template",
+    impactSummary: "Ta’sir: 14 ta shartnoma • 1 ta Ichki hisob siyosati • 3 ta HR shablon",
     affectedAssets: [
-      { name: "Axborot xizmatlari shartnomasi #42", type: "Shartnoma", risk: "Medium", action: "EHF bandi qo'shish" },
-      { name: "Ijara shartnomasi (Bosh ofis)", type: "Shartnoma", risk: "Medium", action: "Fiskal modul kiritish" },
-      { name: "Kompaniya ichki hisob siyosati 2026", type: "Policy", risk: "High", action: "Tahrir kiritish" },
-      { name: "Xodimlarni mukofotlash tartibi (HR)", type: "HR Template", risk: "Low", action: "Soliq stavkasi yangilash" }
+      { name: "Axborot xizmatlari shartnomasi #42", type: "Shartnoma", risk: "O‘rtacha", action: "EHF bandi qo'shish" },
+      { name: "Ijara shartnomasi (Bosh ofis)", type: "Shartnoma", risk: "O‘rtacha", action: "Fiskal modul kiritish" },
+      { name: "Kompaniya ichki hisob siyosati 2026", type: "Ichki siyosat", risk: "Yuqori", action: "Tahrir kiritish" },
+      { name: "Xodimlarni mukofotlash tartibi (HR)", type: "HR Shablon", risk: "Past", action: "Soliq stavkasi yangilash" }
     ]
   },
 
@@ -193,8 +193,8 @@ const LegalData = {
 
   // 8. Workspace Members & RBAC
   teamMembers: [
-    { id: "u-1", name: "Azamat Usmonov", email: "azamat@abctextile.uz", role: "ORG_ADMIN", title: "Bosh Yuridik Maslahatchi", status: "Active" },
-    { id: "u-2", name: "Malika Saidova", email: "malika.hr@abctextile.uz", role: "ORG_MEMBER", title: "HR Bo'limi Boshlig'i", status: "Active" },
-    { id: "u-3", name: "Bekzod Qosimov", email: "bekzod@abctextile.uz", role: "ORG_MEMBER", title: "Moliyaviy Nazoratchi", status: "Active" }
+    { id: "u-1", name: "Azamat Usmonov", email: "azamat@abctextile.uz", role: "ORG_ADMIN", title: "Bosh Yuridik Maslahatchi", status: "Faol" },
+    { id: "u-2", name: "Malika Saidova", email: "malika.hr@abctextile.uz", role: "ORG_MEMBER", title: "HR Bo'limi Boshlig'i", status: "Faol" },
+    { id: "u-3", name: "Bekzod Qosimov", email: "bekzod@abctextile.uz", role: "ORG_MEMBER", title: "Moliyaviy Nazoratchi", status: "Faol" }
   ]
 };

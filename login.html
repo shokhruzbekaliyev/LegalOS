@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LegalOS Uzbekistan — Get Started / Tizimga Kirish</title>
+  <title>LegalOS Uzbekistan — Tizimga Kirish / Вход в систему</title>
   
   <!-- Modern Typography (Inter & JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,27 +23,27 @@
     <!-- 1. Left Fluid Silk Blue Mesh Wave Pane -->
     <aside class="pinterest-left-banner">
       <div class="left-banner-top">
-        <div class="left-banner-tagline">
+        <div class="left-banner-tagline" data-i18n="leftBannerTagline">
           O‘zbekiston LegalTech • AI Platformasi
         </div>
-        <h1 class="left-banner-heading">
-          Speed up your legal work with <span>LegalOS</span>
+        <h1 class="left-banner-heading" data-i18n-html="leftBannerHeading">
+          Yuridik ishlaringizni <span>LegalOS</span> bilan tezlashtiring
         </h1>
-        <p class="left-banner-subdesc">
+        <p class="left-banner-subdesc" data-i18n="leftBannerDesc">
           Savoldan — hujjatga. Hujjatdan — case’ga. Case’dan — proaktiv compliance va real yuristgacha bo‘lgan to‘liq yuridik operatsion tizim.
         </p>
       </div>
 
       <div class="left-banner-bottom">
-        <div class="partners-label">Rasmiy Manbalar va Integratsiyalar</div>
+        <div class="partners-label" data-i18n="partnersLabel">Rasmiy Manbalar va Integratsiyalar</div>
         <div class="partners-logos-row">
-          <span class="partner-logo-item verified-badge">
+          <span class="partner-logo-item verified-badge" data-i18n="verifiedLexuz">
             ✓ Lex.uz (100% Sinxron)
           </span>
-          <span class="partner-logo-item">
+          <span class="partner-logo-item" data-i18n="supremeCourt">
             ⚖️ Oliy Sud
           </span>
-          <span class="partner-logo-item">
+          <span class="partner-logo-item" data-i18n="justiceMinistry">
             🏛️ Adliya Vazirligi
           </span>
           <span class="partner-logo-item">
@@ -55,30 +55,37 @@
 
     <!-- 2. Right Form Pane -->
     <main class="pinterest-right-form">
+      <!-- Top Row with Language Switcher (UZ / RU) -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span class="badge badge-green" style="font-size: 0.72rem;" data-i18n="zeroHallucination">Zero-Hallucination Rejimi</span>
+        <!-- Language Switcher Pill -->
+        <div id="auth-lang-switcher"></div>
+      </div>
+
       <div class="right-form-header">
-        <h2 class="right-form-title" id="auth-main-title">Get Started Now</h2>
-        <p class="right-form-subtitle">Please log in to your account to continue.</p>
+        <h2 class="right-form-title" id="auth-main-title" data-i18n="getStartedTitle">Tizimga Kirish</h2>
+        <p class="right-form-subtitle" id="auth-sub-title" data-i18n="getStartedSubtitle">Davom etish uchun hisobingizga kiring.</p>
       </div>
 
       <!-- Role Selector Pills -->
       <div style="margin-bottom: 8px;">
-        <label class="form-field-label">Foydalanuvchi Roli (Tanlang):</label>
+        <label class="form-field-label" data-i18n="selectRoleLabel">Foydalanuvchi Roli (Tanlang):</label>
         <div class="role-pills-row" id="role-pills-container">
           <button type="button" class="role-pill-btn active" data-role="CITIZEN" onclick="selectAuthRole('CITIZEN', this)">
             <span style="font-size: 1.1rem;">👤</span>
-            <span>Fuqaro</span>
+            <span data-i18n="roleCitizen">Fuqaro</span>
           </button>
           <button type="button" class="role-pill-btn" data-role="LAWYER" onclick="selectAuthRole('LAWYER', this)">
             <span style="font-size: 1.1rem;">⚖️</span>
-            <span>Yurist</span>
+            <span data-i18n="roleLawyer">Yurist</span>
           </button>
           <button type="button" class="role-pill-btn" data-role="ORG_MEMBER" onclick="selectAuthRole('ORG_MEMBER', this)">
             <span style="font-size: 1.1rem;">🏢</span>
-            <span>Biznes</span>
+            <span data-i18n="roleBusiness">Biznes</span>
           </button>
           <button type="button" class="role-pill-btn" data-role="ORG_ADMIN" onclick="selectAuthRole('ORG_ADMIN', this)">
             <span style="font-size: 1.1rem;">🛡️</span>
-            <span>Admin</span>
+            <span data-i18n="roleAdmin">Admin</span>
           </button>
         </div>
       </div>
@@ -88,21 +95,21 @@
         
         <!-- Name Field -->
         <div class="form-field-group">
-          <label class="form-field-label" for="input-name">Name</label>
-          <input type="text" id="input-name" class="form-field-input" placeholder="Enter your name..." value="Otabek Fayzullayev" required />
+          <label class="form-field-label" for="input-name" data-i18n="nameLabel">Ism-familiya / Tashkilot nomi</label>
+          <input type="text" id="input-name" class="form-field-input" placeholder="Ismingiz yoki kompaniya nomini kiriting..." data-i18n-placeholder="namePlaceholder" value="Otabek Fayzullayev" required />
         </div>
 
         <!-- Email Field -->
         <div class="form-field-group">
-          <label class="form-field-label" for="input-email">Email address</label>
-          <input type="email" id="input-email" class="form-field-input" placeholder="workmail@company.uz" value="otabek@gmail.com" required />
+          <label class="form-field-label" for="input-email" data-i18n="emailLabel">Elektron pochta manzili</label>
+          <input type="email" id="input-email" class="form-field-input" placeholder="workmail@company.uz" data-i18n-placeholder="emailPlaceholder" value="otabek@gmail.com" required />
         </div>
 
         <!-- Password Field -->
         <div class="form-field-group">
           <div class="password-row-header">
-            <label class="form-field-label" for="input-password" style="margin-bottom: 0;">Password</label>
-            <a href="#" class="forgot-link" onclick="alert('Parolni tiklash yo‘riqnomasi pochtangizga yuborildi!'); return false;">Forgot Password?</a>
+            <label class="form-field-label" for="input-password" style="margin-bottom: 0;" data-i18n="passwordLabel">Parol</label>
+            <a href="#" class="forgot-link" data-i18n="forgotPassword" onclick="alert(i18n.getLang() === 'ru' ? 'Инструкция по сбросу пароля отправлена на почту!' : 'Parolni tiklash yo‘riqnomasi pochtangizga yuborildi!'); return false;">Parolni unutdingizmi?</a>
           </div>
           <div style="position: relative;">
             <input type="password" id="input-password" class="form-field-input" placeholder="••••••••••••" value="LegalOS2026Secure!" required />
@@ -112,37 +119,37 @@
         <!-- Terms Checkbox -->
         <div class="checkbox-row">
           <input type="checkbox" id="terms-agree" checked required />
-          <label for="terms-agree">
-            I agree to the <a href="#">Terms & Privacy</a>
+          <label for="terms-agree" data-i18n="agreeTerms">
+            Foydalanish shartlari va Maxfiylik siyosatiga roziman
           </label>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn-pinterest-login" id="btn-login-submit">
-          Log in
+        <button type="submit" class="btn-pinterest-login" id="btn-login-submit" data-i18n="loginBtn">
+          Tizimga Kirish
         </button>
 
       </form>
 
       <!-- Switch between login/signup -->
       <div class="signup-switch-prompt">
-        <span id="prompt-switch-text">Have an account? </span>
-        <a href="#" onclick="togglePinterestMode(); return false;" id="prompt-switch-link">Sign up</a>
+        <span id="prompt-switch-text" data-i18n="noAccountPrompt">Hisobingiz yo‘qmi? </span>
+        <a href="#" onclick="togglePinterestMode(); return false;" id="prompt-switch-link" data-i18n="signUpLink">Ro‘yxatdan o‘tish</a>
       </div>
 
       <!-- Divider -->
-      <div class="pinterest-divider">Or</div>
+      <div class="pinterest-divider" data-i18n="orText">Yoki</div>
 
       <!-- Dual Social / OneID Auth Buttons -->
       <div class="dual-auth-row">
         <button type="button" class="btn-social-outline btn-oneid-card" onclick="triggerQuickPortalLogin()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
-          <span>Login with OneID</span>
+          <span data-i18n="loginWithOneID">OneID orqali kirish</span>
         </button>
 
         <button type="button" class="btn-social-outline" onclick="triggerQuickPortalLogin()">
           <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.9c2.28-2.1 3.64-5.2 3.64-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.9-3.05c-1.08.72-2.45 1.16-4.03 1.16-3.1 0-5.73-2.1-6.67-4.93H1.27v3.13C3.25 21.3 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.33 14.27A7.2 7.2 0 0 1 4.95 12c0-.79.14-1.57.38-2.27V6.6H1.27A11.96 11.96 0 0 0 0 12c0 1.92.45 3.74 1.27 5.4l4.06-3.13z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.35.61 4.6 1.8l3.43-3.43C17.93 1.25 15.22 0 12 0 7.33 0 3.25 2.7 1.27 6.6l4.06 3.13c.94-2.83 3.57-4.96 6.67-4.96z"/></svg>
-          <span>Login with Google</span>
+          <span data-i18n="loginWithGoogle">Google orqali kirish</span>
         </button>
       </div>
 
@@ -150,6 +157,8 @@
 
   </div>
 
+  <!-- i18n Translation Engine -->
+  <script src="js/i18n.js"></script>
   <script>
     let activeRole = 'CITIZEN';
     let isSignup = false;
@@ -202,22 +211,31 @@
     function togglePinterestMode() {
       isSignup = !isSignup;
       const title = document.getElementById('auth-main-title');
+      const subTitle = document.getElementById('auth-sub-title');
       const submitBtn = document.getElementById('btn-login-submit');
       const promptText = document.getElementById('prompt-switch-text');
       const promptLink = document.getElementById('prompt-switch-link');
 
       if (isSignup) {
-        title.textContent = 'Create an Account';
-        submitBtn.textContent = 'Sign up';
-        promptText.textContent = 'Already have an account? ';
-        promptLink.textContent = 'Log in';
+        title.setAttribute('data-i18n', 'createAccountTitle');
+        subTitle.setAttribute('data-i18n', 'createAccountSubtitle');
+        submitBtn.setAttribute('data-i18n', 'signupBtn');
+        promptText.setAttribute('data-i18n', 'haveAccountPrompt');
+        promptLink.setAttribute('data-i18n', 'signInLink');
       } else {
-        title.textContent = 'Get Started Now';
-        submitBtn.textContent = 'Log in';
-        promptText.textContent = 'Have an account? ';
-        promptLink.textContent = 'Sign up';
+        title.setAttribute('data-i18n', 'getStartedTitle');
+        subTitle.setAttribute('data-i18n', 'getStartedSubtitle');
+        submitBtn.setAttribute('data-i18n', 'loginBtn');
+        promptText.setAttribute('data-i18n', 'noAccountPrompt');
+        promptLink.setAttribute('data-i18n', 'signUpLink');
       }
+      i18n.applyTranslations();
     }
+
+    // Initialize Language Switcher on load
+    document.addEventListener('DOMContentLoaded', () => {
+      i18n.renderSwitcher('auth-lang-switcher');
+    });
   </script>
 
 </body>

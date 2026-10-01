@@ -22,14 +22,14 @@
   <!-- Proactive Compliance Banner -->
   <aside class="compliance-banner">
     <div class="compliance-banner-content">
-      <span class="banner-alert-tag">Proaktiv Alert</span>
+      <span class="banner-alert-tag" data-i18n="proactiveAlertTitle">Proaktiv Ogohlantirish</span>
       <span class="banner-text">
-        <strong>Soliq qonunchiligida o‘zgarish aniqlandi:</strong>
-        <span class="banner-impact-preview">Kompaniyangizdagi 14 ta shartnoma va 3 ta HR shabloniga ta’sir qiladi</span>
+        <strong data-i18n="proactiveAlertText">Soliq qonunchiligida o‘zgarish aniqlandi:</strong>
+        <span class="banner-impact-preview" data-i18n="proactiveAlertImpact">Ta’sir: 14 ta shartnoma • 1 ta Ichki hisob siyosati • 3 ta HR shablon</span>
       </span>
     </div>
     <button class="banner-btn-review" onclick="switchBusinessTab('compliance')">
-      Ta’sirlarni Ko‘rish →
+      <span data-i18n="reviewImpactBtn">Ta’sirlarni ko‘rish</span> →
     </button>
   </aside>
 
@@ -42,33 +42,36 @@
         </div>
         <div class="logo-text-group">
           <span class="logo-title">Legal<span>OS</span></span>
-          <span class="logo-subtitle">Biznes & Shartnomalar (Business)</span>
+          <span class="logo-subtitle" data-i18n="portalSubtitleBusiness">Biznes & Shartnomalar</span>
         </div>
       </a>
 
       <div class="header-search" style="width: 360px;">
         <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" placeholder="Shartnomalar, ichki siyosatlar yoki xavflarni qidirish..." />
+        <input type="text" data-i18n-placeholder="searchPlaceholderBusiness" placeholder="Shartnomalar, ichki siyosatlar yoki xavflarni qidirish..." />
       </div>
     </div>
 
     <div class="header-right">
+      <!-- Language Switcher [ O‘Z | РУ ] -->
+      <div id="business-lang-switcher"></div>
+
       <span class="status-pill">
         <span class="status-dot-pulse"></span>
-        <span>ABC Textile MCHJ: Himoyalangan</span>
+        <span data-i18n="companyProtectedStatus">ABC Textile MCHJ: Himoyalangan</span>
       </span>
 
       <div class="user-profile-menu">
         <div class="user-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">MS</div>
         <div class="user-info">
           <span class="user-name">Malika Saidova</span>
-          <span class="user-role-label">🏢 ORG_MEMBER • HR Boshlig‘i</span>
+          <span class="user-role-label" data-i18n="memberUserRole">🏢 XODIM • HR Bo‘limi Boshlig‘i</span>
         </div>
       </div>
 
       <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-        Chiqish
+        <span data-i18n="logout">Chiqish</span>
       </a>
     </div>
   </header>
@@ -77,31 +80,31 @@
     <!-- Sidebar -->
     <aside class="app-sidebar">
       <div>
-        <div class="sidebar-section-title">Kompaniya Ish Paneli</div>
+        <div class="sidebar-section-title" data-i18n="navMainProcesses">Kompaniya Ish Paneli</div>
         <ul class="sidebar-nav-list">
           <li>
             <button class="nav-item-btn active" onclick="switchBusinessTab('contracts', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                Contract Intelligence
+                <span data-i18n="navContracts">Shartnomalar Tahlili (Redline)</span>
               </span>
-              <span class="nav-badge-count danger">1 Risk</span>
+              <span class="nav-badge-count danger">1 ta xavf</span>
             </button>
           </li>
           <li>
             <button class="nav-item-btn" onclick="switchBusinessTab('compliance', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-                Proaktiv Compliance
+                <span data-i18n="navCompliance">Proaktiv Compliance</span>
               </span>
-              <span class="nav-badge-count danger">Alert</span>
+              <span class="nav-badge-count danger">Ogohlantirish</span>
             </button>
           </li>
           <li>
             <button class="nav-item-btn" onclick="switchBusinessTab('internal_rag', this)">
               <span class="nav-btn-content">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                Kompaniya Ichki Siyosatlari
+                <span data-i18n="navInternalPolicies">Kompaniya Ichki Siyosatlari</span>
               </span>
             </button>
           </li>
@@ -151,7 +154,7 @@
             </div>
             <div class="clause-item has-risk active">
               <span>8.3. Javobgarlik</span>
-              <span class="badge badge-danger">1 HIGH RISK</span>
+              <span class="badge badge-danger">1 YUQORI XAVF</span>
             </div>
             <div class="clause-item">
               <span>9. Fors-major</span>
@@ -170,7 +173,7 @@
                 <div class="risk-card-title">
                   ⚠️ 8.3-band — Bir tomonlama nomutanosib javobgarlik
                 </div>
-                <span class="badge badge-danger">HIGH RISK</span>
+                <span class="badge badge-danger">YUQORI XAVF</span>
               </div>
               <p style="color: #475569; font-size: 0.9rem;">
                 Band majburiyat va kompensatsiya yukini asosan bir tomonga yuklaydi. Bajaruvchi uchun esa hech qanday javobgarlik nazarda tutilmagan.
@@ -189,7 +192,7 @@
               <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 12px;">
                 <button class="btn btn-secondary btn-sm" onclick="UIComponents.showToast('Tahrir rad etildi', 'info')">Rad etish</button>
                 <button class="btn btn-success" onclick="acceptBusinessRedline()">
-                  ✓ Tahrirni Qabul Qilish (Accept Change)
+                  ✓ Tahrirni Qabul Qilish
                 </button>
               </div>
             </div>
@@ -284,6 +287,7 @@
   </div>
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script>
@@ -303,7 +307,7 @@
     card.style.background = '#f0fdf4';
     card.innerHTML = `
       <div style="color: #065f46; font-weight: 700; font-size: 1.05rem;">
-        ✓ 8.3-band muvaffaqiyatli qonunchilikka moslashtirildi (VERIFIED SAFE)
+        ✓ 8.3-band muvaffaqiyatli qonunchilikka moslashtirildi (XAVFSIZ TEKSHIRILDI)
       </div>
       <p style="font-size: 0.88rem; color: #047857; margin-top: 4px;">
         Bir tomonlama og‘ir jarima bekor qilindi. O‘zbekiston FK 333-moddasi talablariga mos 10% lik limit va teng javobgarlik kiritildi.
