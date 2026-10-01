@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LegalOS — Yurist Workbench & Case Management</title>
   
+  <!-- Authentication Guard for First-time Visitors -->
+  <script>
+    if (sessionStorage.getItem('legalos_is_authenticated') !== 'true') {
+      window.location.replace('login.html');
+    }
+  </script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -48,14 +55,14 @@
       </span>
 
       <div class="user-profile-menu">
-        <div class="user-avatar" style="background: linear-gradient(135deg, #1d4ed8, #059669);">SR</div>
+        <div class="user-avatar" id="lawyer-avatar" style="background: linear-gradient(135deg, #1d4ed8, #059669);">SR</div>
         <div class="user-info">
-          <span class="user-name">Sardor Rahimov</span>
+          <span class="user-name" id="lawyer-username">Sardor Rahimov</span>
           <span class="user-role-label" data-i18n="lawyerUserRole">⚖️ YURIST • Mustaqil Advokat</span>
         </div>
       </div>
 
-      <a href="login.html" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
+      <a href="login.html" onclick="sessionStorage.clear();" class="btn btn-secondary btn-sm" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
         <span data-i18n="logout">Chiqish</span>
       </a>
@@ -366,6 +373,20 @@
     if (target) target.style.display = 'block';
     if (btn) btn.classList.add('active');
   }
+
+  // Populate dynamic user info from session
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = sessionStorage.getItem('legalos_username');
+    if (user) {
+      const nameEl = document.getElementById('lawyer-username');
+      if (nameEl) nameEl.textContent = user;
+      const avatarEl = document.getElementById('lawyer-avatar');
+      if (avatarEl) {
+        const initials = user.split(' ').map(n=>n[0]).join('').substring(0, 2).toUpperCase();
+        if (initials) avatarEl.textContent = initials;
+      }
+    }
+  });
 </script>
 
 </body>

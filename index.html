@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LegalOS Uzbekistan — AI Yuridik Operatsion Tizimi</title>
   
+  <!-- Authentication Guard for First-time Visitors -->
+  <script>
+    if (sessionStorage.getItem('legalos_is_authenticated') !== 'true') {
+      window.location.replace('login.html');
+    }
+  </script>
+  
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,29 +81,13 @@
         <span>🛡️</span> <span data-i18n="adminPanelBtn">Admin Panel</span>
       </a>
 
-      <!-- Role Switcher Segmented Control -->
-      <div class="role-switcher-container" id="role-switcher" title="Foydalanuvchi rejimini almashtirish">
-        <button class="role-tab-btn role-citizen" data-role="CITIZEN" onclick="appState.setRole('CITIZEN')">
-          👤 <span data-i18n="roleCitizen">Fuqaro</span>
-        </button>
-        <button class="role-tab-btn role-lawyer" data-role="LAWYER" onclick="appState.setRole('LAWYER')">
-          ⚖️ <span data-i18n="roleLawyer">Yurist</span>
-        </button>
-        <button class="role-tab-btn role-member" data-role="ORG_MEMBER" onclick="appState.setRole('ORG_MEMBER')">
-          🏢 <span data-i18n="roleMember">Xodim</span>
-        </button>
-        <button class="role-tab-btn role-admin active" data-role="ORG_ADMIN" onclick="appState.setRole('ORG_ADMIN')">
-          🛡️ <span data-i18n="roleAdmin">Admin</span>
-        </button>
-      </div>
-
       <!-- Sync Status Badge -->
       <div class="status-pill" title="Lex.uz bazasi bilan sinxronlangan">
         <span class="status-dot-pulse"></span>
         <span data-i18n="syncStatus">Lex.uz RAG: Sinxron</span>
       </div>
 
-      <!-- User Profile -->
+      <!-- User Profile (Displays Authenticated User) -->
       <div class="user-profile-menu" onclick="appState.setActiveTab('workspace')" title="Profil va sozlamalar">
         <div class="user-avatar" id="header-avatar">AU</div>
         <div class="user-info">
@@ -105,11 +96,11 @@
         </div>
       </div>
 
-      <!-- Dedicated Auth & Portals Link -->
-      <a href="login.html" class="btn btn-primary btn-sm" title="Avtorizatsiya bo‘limi" style="font-size: 0.8rem; padding: 6px 14px; gap: 6px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-        <span data-i18n="authButton">Kirish / Kabinet</span>
-      </a>
+      <!-- Logout Button -->
+      <button type="button" class="btn btn-secondary btn-sm" onclick="sessionStorage.clear(); window.location.href='login.html';" title="Tizimdan chiqish" style="color: #ef4444; border-color: #fca5a5; font-size: 0.8rem; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span data-i18n="logout">Chiqish</span>
+      </button>
     </div>
   </header>
 

@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
+  // 0. Sync role from session if available
+  const storedRole = sessionStorage.getItem('legalos_role');
+  if (storedRole) {
+    appState.currentRole = storedRole;
+  }
+
   // 1. Initial State Render
   renderAll();
 
@@ -77,45 +83,45 @@ function renderAll() {
 
 // Update Role Display
 function updateRoleDisplay(role) {
-  const roleButtons = document.querySelectorAll('.role-tab-btn');
-  roleButtons.forEach((btn) => {
-    if (btn.dataset.role === role) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
+  const userNameEl = document.getElementById('header-username');
+  const userAvatarEl = document.getElementById('header-avatar');
+  const userRoleEl = document.getElementById('header-userrole');
+  const adminBtn = document.getElementById('index-admin-panel-btn');
 
-  const userAvatar = document.getElementById('header-avatar');
-  const userName = document.getElementById('header-username');
-  const userRole = document.getElementById('header-userrole');
+  const sessionName = sessionStorage.getItem('legalos_username');
+  const sessionRole = sessionStorage.getItem('legalos_role') || role;
 
-  if (role === 'CITIZEN') {
-    userAvatar.textContent = 'OF';
-    userAvatar.style.background = 'linear-gradient(135deg, #3b82f6, #0284c7)';
-    userName.textContent = 'Otabek Fayzullayev';
-    userRole.textContent = (window.i18n ? i18n.t('citizenUserRole') : '') || 'FUQARO • Oddiy fuqaro';
-  } else if (role === 'LAWYER') {
-    userAvatar.textContent = 'SR';
-    userAvatar.style.background = 'linear-gradient(135deg, #1d4ed8, #2563eb)';
-    userName.textContent = 'Sardor Rahimov';
-    userRole.textContent = (window.i18n ? i18n.t('lawyerUserRole') : '') || 'YURIST • Mustaqil Advokat';
-  } else if (role === 'ORG_MEMBER') {
-    userAvatar.textContent = 'MS';
-    userAvatar.style.background = 'linear-gradient(135deg, #059669, #10b981)';
-    userName.textContent = 'Malika Saidova';
-    userRole.textContent = (window.i18n ? i18n.t('memberUserRole') : '') || 'XODIM • HR Bo‘limi Boshlig‘i';
-  } else if (role === 'ORG_ADMIN') {
-    userAvatar.textContent = 'AU';
-    userAvatar.style.background = 'linear-gradient(135deg, #1e40af, #047857)';
-    userName.textContent = 'Azamat Usmonov';
-    userRole.textContent = (window.i18n ? i18n.t('adminUserRole') : '') || 'BOSH ADMIN • ABC Textile';
+  const roleLabels = {
+    'CITIZEN': (window.i18n ? i18n.t('citizenUserRole') : '') || '👤 FUQARO • Oddiy fuqaro',
+    'LAWYER': (window.i18n ? i18n.t('lawyerUserRole') : '') || '⚖️ YURIST • Mustaqil Advokat',
+    'ORG_MEMBER': (window.i18n ? i18n.t('memberUserRole') : '') || '🏢 XODIM • HR Bo‘limi Boshlig‘i',
+    'ORG_ADMIN': (window.i18n ? i18n.t('adminUserRole') : '') || '🛡️ BOSH ADMIN • SuperAdmin'
+  };
+
+  const roleGradients = {
+    'CITIZEN': 'linear-gradient(135deg, #3b82f6, #0284c7)',
+    'LAWYER': 'linear-gradient(135deg, #1d4ed8, #2563eb)',
+    'ORG_MEMBER': 'linear-gradient(135deg, #059669, #10b981)',
+    'ORG_ADMIN': 'linear-gradient(135deg, #1e40af, #047857)'
+  };
+
+  const displayName = sessionName || (
+    sessionRole === 'CITIZEN' ? 'Otabek Fayzullayev' :
+    sessionRole === 'LAWYER' ? 'Sardor Rahimov' :
+    sessionRole === 'ORG_MEMBER' ? 'Malika Saidova' : 'Azamat Usmonov'
+  );
+
+  if (userNameEl) userNameEl.textContent = displayName;
+  if (userRoleEl) userRoleEl.textContent = roleLabels[sessionRole] || 'Foydalanuvchi';
+  if (userAvatarEl) {
+    const initials = displayName.split(' ').map(n=>n[0]).join('').substring(0, 2).toUpperCase();
+    userAvatarEl.textContent = initials || 'AU';
+    userAvatarEl.style.background = roleGradients[sessionRole] || roleGradients['ORG_ADMIN'];
   }
 
   // Access Control: Admin Panel is accessible only to Business (ORG_MEMBER) and Admin (ORG_ADMIN)
-  const adminBtn = document.getElementById('index-admin-panel-btn');
   if (adminBtn) {
-    if (role === 'ORG_ADMIN' || role === 'ORG_MEMBER') {
+    if (sessionRole === 'ORG_ADMIN' || sessionRole === 'ORG_MEMBER') {
       adminBtn.style.display = 'inline-flex';
     } else {
       adminBtn.style.display = 'none';
