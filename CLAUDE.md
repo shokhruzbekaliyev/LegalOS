@@ -15,17 +15,21 @@ LegalOS Uzbekistan is an end-to-end Legal Operating System tailored for Uzbekist
 ## File Architecture & Portals
 
 ### 1. Dedicated Portals
-- `login.html`: Modern authorization portal designed after Pinterest floating card style (silk blue wave gradient, role switcher pills, OneID button, Google login).
-- `citizen.html`: Citizen portal (`CITIZEN`) — Legal AI Chat, pre-filled legal claim templates, find a real lawyer.
-- `lawyer.html`: Lawyer portal (`LAWYER`) — Case workbench (#UZ-2048), AI Court Strategy Simulator (3-Agent), court precedents research, billing CRM.
-- `business.html`: Corporate portal (`ORG_MEMBER`) — Contract Intelligence & Redline diff, Proactive Compliance alerts, Internal Policy RAG.
-- `admin.html`: Admin portal (`ORG_ADMIN`) — User management & RBAC, Audit trail logs, subscription billing, API integration keys.
-- `index.html`: Unified SPA combining all 7 interactive modules.
+- `templates/login.html`: Modern authorization portal designed after Pinterest floating card style (silk blue wave gradient, role switcher pills, OneID button, Google login).
+- `templates/citizen.html`: Citizen portal (`CITIZEN`) — Legal AI Chat, pre-filled legal claim templates, find a real lawyer.
+- `templates/lawyer.html`: Lawyer portal (`LAWYER`) — Case workbench (#UZ-2048), AI Court Strategy Simulator (3-Agent), court precedents research, billing CRM.
+- `templates/business.html`: Corporate portal (`ORG_MEMBER`) — Contract Intelligence & Redline diff, Proactive Compliance alerts, Internal Policy RAG.
+- `templates/admin.html`: Admin portal (`ORG_ADMIN`) — User management & RBAC, Audit trail logs, subscription billing, API integration keys.
+- `templates/index.html`: Public landing page (hero, portals, features, security).
+- `templates/register.html`: Registration page (shares `css/auth.css` with login).
+- `templates/studio.html`: AI Studio — unified SPA combining all 7 interactive modules.
+
+**Convention:** all HTML lives in `templates/`; static files stay in `css/`, `js/`, `assets/` and are referenced as `../css/...`, `../js/...`. Pages link to each other by bare filename (`login.html`). `serve.py` serves `templates/*.html` at the root URL (`/` → `index.html`, `/login.html`), so keep new pages in `templates/`.
 
 ### 2. Styling System (`css/`)
 - `css/variables.css`: Design tokens, colors (Primary Blue: `#2563eb`, `#1d4ed8`; Green: `#10b981`, `#059669`; White: `#ffffff`, `#f8fafc`).
 - `css/base.css`: Global typography (Inter font), buttons, badges, cards, resets.
-- `css/auth.css`: Styling for `login.html` floating card and mesh wave layout.
+- `css/auth.css`: Styling for `login.html`/`register.html` floating card and mesh wave layout.
 - `css/layout.css`: Header, sidebar, proactive compliance alert banner.
 - `css/components.css`: Citations, Verifier Seal stamps, Redline `<del>` and `<ins>` diffs, slide-out drawer, toast alerts.
 - `css/views.css`: Specific layouts for Chat, Simulator, Time Machine, Compliance.

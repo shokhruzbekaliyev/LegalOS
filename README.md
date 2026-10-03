@@ -18,24 +18,28 @@ Loyiha har bir foydalanuvchi toifasi uchun **alohida to‘liq HTML oynalariga** 
 
 | Sahifa | Maqsad | Foydalanuvchi Toifasi | Asosiy Xususiyatlar |
 | :--- | :--- | :--- | :--- |
-| **`login.html`** | **Avtorizatsiya Portali** | Barcha rollar | 4 ta rolni tanlash, 1-Click tezkor Demo kirish, OneID davlat integratsiyasi, Login/Parol |
-| **`citizen.html`** | **Fuqaro Portali** | `CITIZEN` | Oddiy huquqiy AI yordamchi, tayyor arizalar va shablonlar (mehnat, iste'molchi, qarz), yurist topish |
-| **`lawyer.html`** | **Yurist Workbench** | `LAWYER` | Case management (12 ta dalil, 3 deadline), AI Court Strategy Simulator (3-Agent), sud amaliyoti, billing CRM |
-| **`business.html`** | **Biznes Portali** | `ORG_MEMBER` | Contract Intelligence, High-risk 8.3-band redline diff, Proaktiv Compliance alertlari, Ichki siyosat RAG |
-| **`admin.html`** | **Tashkilot Admini** | `ORG_ADMIN` | Xodimlar va RBAC huquqlari, tizim audit jurnali (Audit trail), tariflar va obuna, API tokenlar |
-| **`index.html`** | **Universal SPA Dashboard** | Barchasi | 7 ta modulni bitta boshqaruv panelida birlashtirgan dinamik SPA ko‘rinishi |
+| **`templates/login.html`** | **Avtorizatsiya Portali** | Barcha rollar | 4 ta rolni tanlash, 1-Click tezkor Demo kirish, OneID davlat integratsiyasi, Login/Parol |
+| **`templates/citizen.html`** | **Fuqaro Portali** | `CITIZEN` | Oddiy huquqiy AI yordamchi, tayyor arizalar va shablonlar (mehnat, iste'molchi, qarz), yurist topish |
+| **`templates/lawyer.html`** | **Yurist Workbench** | `LAWYER` | Case management (12 ta dalil, 3 deadline), AI Court Strategy Simulator (3-Agent), sud amaliyoti, billing CRM |
+| **`templates/business.html`** | **Biznes Portali** | `ORG_MEMBER` | Contract Intelligence, High-risk 8.3-band redline diff, Proaktiv Compliance alertlari, Ichki siyosat RAG |
+| **`templates/admin.html`** | **Tashkilot Admini** | `ORG_ADMIN` | Xodimlar va RBAC huquqlari, tizim audit jurnali (Audit trail), tariflar va obuna, API tokenlar |
+| **`templates/studio.html`** | **AI Studio (Universal SPA)** | Barchasi | 7 ta modulni bitta boshqaruv panelida birlashtirgan dinamik SPA ko‘rinishi |
 
 ---
 
 ## 📂 Loyiha Fayllar Strukturasi
 ```
 legalos-web/
-├── login.html            # Avtorizatsiya portali (Role switcher, Demo login, OneID)
-├── citizen.html          # Fuqarolar uchun maxsus kabinet
-├── lawyer.html           # Mustaqil yuristlar uchun sud & case workbench
-├── business.html         # Kompaniya xodimlari uchun shartnomalar & compliance
-├── admin.html            # Tashkilot admini uchun RBAC & audit boshqaruvi
-├── index.html            # Universal SPA to'liq dashboard
+├── templates/            # Barcha HTML sahifalar
+│   ├── index.html        # Landing sahifa (bosh sahifa)
+│   ├── login.html        # Avtorizatsiya portali (Role switcher, Demo login, OneID)
+│   ├── register.html     # Ro'yxatdan o'tish
+│   ├── citizen.html      # Fuqarolar uchun maxsus kabinet
+│   ├── lawyer.html       # Mustaqil yuristlar uchun sud & case workbench
+│   ├── business.html     # Kompaniya xodimlari uchun shartnomalar & compliance
+│   ├── admin.html        # Tashkilot admini uchun RBAC & audit boshqaruvi
+│   └── studio.html       # AI Studio (7 modulli SPA dashboard)
+├── assets/               # Rasmlar
 ├── serve.py              # Mahalliy test serveri
 ├── css/
 │   ├── auth.css          # Login va ro'yxatdan o'tish dizayni
