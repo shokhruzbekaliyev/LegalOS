@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LegalOS — Fuqaro Kabineti (Citizen Portal)</title>
+  <title>ELAW — Fuqaro Kabineti (Citizen Portal)</title>
+  <link rel="icon" type="image/svg+xml" href="assets/elaw-logo.svg">
   
   <!-- Authentication Guard for First-time Visitors -->
   <script>
@@ -31,10 +32,10 @@
     <div class="header-left">
       <a href="citizen.html" class="brand-logo">
         <div class="logo-icon" style="background: linear-gradient(135deg, #2563eb, #10b981);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <svg data-elaw width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="3.5" height="16" rx="1"/><rect x="5" y="4" width="14" height="3.5" rx="1"/><rect x="5" y="10.25" width="10" height="3.5" rx="1"/><rect x="5" y="16.5" width="14" height="3.5" rx="1"/></svg>
         </div>
         <div class="logo-text-group">
-          <span class="logo-title">Legal<span>OS</span></span>
+          <span class="logo-title">E<span>LAW</span></span>
           <span class="logo-subtitle" data-i18n="portalSubtitleCitizen">Fuqaro Portali</span>
         </div>
       </a>
@@ -51,7 +52,7 @@
 
       <span class="status-pill">
         <span class="status-dot-pulse"></span>
-        <span data-i18n="activeStatus">Lex.uz RAG: Faol</span>
+        <span data-i18n="activeStatus">Qonunlar RAG: Faol</span>
       </span>
 
       <div class="user-profile-menu">
@@ -139,7 +140,7 @@
               <div class="message-avatar" style="background: linear-gradient(135deg, #2563eb, #10b981); color: white;">AI</div>
               <div class="message-bubble">
                 <div class="message-meta">
-                  <span class="message-sender">LegalOS Fuqaro Yordamchisi</span>
+                  <span class="message-sender">ELAW Fuqaro Yordamchisi</span>
                   <span style="color: #64748b; font-size: 0.72rem;">Bugun</span>
                 </div>
                 <div style="font-size: 0.93rem; color: #1e293b;">
@@ -150,7 +151,7 @@
                   <div class="verifier-seal-left">
                     <div class="verifier-icon-badge">✓</div>
                     <div>
-                      <div class="verifier-title">Lex.uz bazasi bilan tasdiqlanadi</div>
+                      <div class="verifier-title">Rasmiy qonunlar bazasi bilan tasdiqlanadi</div>
                       <div class="verifier-subtitle">Fuqarolik va Mehnat kodekslari tahrirlari</div>
                     </div>
                   </div>
@@ -183,7 +184,7 @@
       <section class="citizen-tab-pane" id="pane-templates" style="display: none;">
         <div style="margin-bottom: 20px;">
           <h2>Tayyor Ariza va Shablonlar Generatori</h2>
-          <p>Bir necha savolga javob bering — LegalOS avtomatik ravishda tayyor huquqiy ariza matnini shakllantiradi.</p>
+          <p>Bir necha savolga javob bering — ELAW avtomatik ravishda tayyor huquqiy ariza matnini shakllantiradi.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px;">
@@ -349,7 +350,7 @@
           <div class="message-avatar" style="background: linear-gradient(135deg, #2563eb, #10b981); color: white;">AI</div>
           <div class="message-bubble">
             <div class="message-meta">
-              <span class="message-sender">LegalOS Fuqaro Maslahatchisi</span>
+              <span class="message-sender">ELAW Fuqaro Maslahatchisi</span>
               <span style="font-size: 0.72rem; color: #64748b;">Hozirgina</span>
             </div>
             <div style="font-size: 0.93rem; color: #1e293b; line-height: 1.6;">
@@ -363,7 +364,7 @@
               <div class="verifier-seal-left">
                 <div class="verifier-icon-badge">✓</div>
                 <div>
-                  <div class="verifier-title">Lex.uz tasdiqlangan norma</div>
+                  <div class="verifier-title">Rasmiy tasdiqlangan norma</div>
                   <div class="verifier-subtitle">MK 253-modda bo‘yicha tekshirildi</div>
                 </div>
               </div>
@@ -390,5 +391,6 @@
   });
 </script>
 
+  <script src="js/icons.js"></script>
 </body>
 </html>

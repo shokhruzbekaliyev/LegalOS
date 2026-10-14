@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Main Controller Application Logic
+   ELAW Uzbekistan - Main Controller Application Logic
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -146,7 +146,7 @@ function renderChatMessages(messages) {
         </div>
         <div class="message-bubble">
           <div class="message-meta">
-            <span class="message-sender">${isAssistant ? (msg.agent || 'LegalOS AI') : 'Siz'}</span>
+            <span class="message-sender">${isAssistant ? (msg.agent || 'ELAW AI') : 'Siz'}</span>
             <span style="color: ${isAssistant ? '#64748b' : '#bfdbfe'}; font-size: 0.72rem;">${msg.time}</span>
           </div>
           <div style="font-size: 0.93rem;">${formattedText}</div>

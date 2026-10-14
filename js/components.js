@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Dynamic Component Renderers
+   ELAW Uzbekistan - Dynamic Component Renderers
    ========================================================================== */
 
 const UIComponents = {

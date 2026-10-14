@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo — ELAW Uzbekistan </title>
+  <meta name="description" content="ELAW Uzbekistan demo-videosi, tavsifi va ishlayotgan prototip havolasi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/elaw-logo.svg">
+  <link rel="stylesheet" href="../css/pitch.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="../pitch.html" class="brand">
+      <span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="3.5" height="16" rx="1"/><rect x="5" y="4" width="14" height="3.5" rx="1"/><rect x="5" y="10.25" width="10" height="3.5" rx="1"/><rect x="5" y="16.5" width="14" height="3.5" rx="1"/></svg></span>
+      <span>E<b>LAW</b></span>
+    </a>
+    <a href="../pitch.html" class="btn btn-ghost btn-sm">← Asosiy sahifa</a>
+  </div>
+</nav>
+
+<main>
+  <section style="padding-bottom:40px">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <div class="kicker">Demo</div>
+        <h1 class="sec-title" style="font-size:clamp(2rem,4vw,3rem)">ELAW demo-videosi</h1>
+      </div>
+      <div class="demo-grid">
+        <div>
+          <!-- 6.1 Demo-video -->
+          <div class="video" id="video">
+            <div style="padding:24px"><div style="font-size:2.4rem">▶</div><p style="margin-top:8px;font-weight:600;color:#e2e8f0">Demo-video tez orada</p></div>
+          </div>
+
+          <!-- 6.2 Demo-videoning tavsifi -->
+          <h2 style="font-size:1.4rem;margin:32px 0 12px">Video tavsifi</h2>
+          <p style="color:var(--muted)">Videoda ELAW'ning asosiy g'oyasi — bitta tizimda savoldan real yuristgacha bo'lgan butun yuridik jarayon — to'rt rolli prototip va ishlayotgan backend orqali ko'rsatiladi. Har bir javob manbaga bog'lanadi va Verifier tomonidan tekshiriladi.</p>
+          <h3 style="font-size:1.05rem;margin:26px 0 14px">Video mazmuni</h3>
+          <ul class="chapters">
+            <li><time>0:00</time><div><b>Muammo</b><span>Yuridik ishlar nega parchalangan va bu foydalanuvchiga nimaga tushadi.</span></div></li>
+            <li><time>0:30</time><div><b>Kirish va rollar</b><span>Fuqaro, yurist, biznes va admin portallari — har bir rol uchun alohida interfeys.</span></div></li>
+            <li><time>1:00</time><div><b>Legal Chat</b><span>Savol → iqtiboslar bilan javob → yashil Verifier muhri.</span></div></li>
+            <li><time>1:45</time><div><b>Contract Intelligence</b><span>Xavfli bandni aniqlash, huquqiy asos, redline va Accept Change.</span></div></li>
+            <li><time>2:30</time><div><b>Court Simulator va Compliance</b><span>Uch agentli sud strategiyasi va qonun o'zgarishining ta'sir tahlili.</span></div></li>
+            <li><time>3:15</time><div><b>Backend: real API</b><span>Ro'yxatdan o'tish, login va JWT — PostgreSQL bilan ishlaydigan Spring Boot servisi.</span></div></li>
+            <li><time>4:00</time><div><b>Yo'l xaritasi</b><span>MVP'ning 5 moduli va keyingi bosqichlar.</span></div></li>
+          </ul>
+        </div>
+
+        <!-- 6.3 Ishlayotgan prototip havolasi -->
+        <aside class="card" style="position:sticky;top:90px">
+          <h3>Ishlayotgan prototip</h3>
+          <p style="margin:8px 0 18px">To'rt rolli interaktiv web prototip: fuqaro, yurist, biznes va admin portallari.</p>
+          <div id="proto"><span class="todo" data-todo>TODO: prototip havolasi (js/config.js)</span></div>
+          <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+          <h3 style="font-size:1rem">Nimani sinab ko'rish mumkin</h3>
+          <ul style="padding-left:18px;margin:10px 0 0">
+            <li>Rolni tanlab tizimga kirish</li>
+            <li>Legal Chat va iqtibos drawer'i</li>
+            <li>Shartnoma redline'i</li>
+            <li>Court Simulator va Time Machine</li>
+          </ul>
+          <p style="margin-top:14px;font-size:.85rem">Prototipdagi ma'lumotlar namunaviy; haqiqiy AI va rasmiy qonunchilik integratsiyasi MVP bosqichida ulanadi.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span>© 2026 ELAW Uzbekistan</span>
+    <a href="../pitch.html">← Asosiy sahifa</a>
+  </div>
+</footer>
+
+<script src="../js/pitch-config.js"></script>
+<script>
+  const c = window.DEMO_CONFIG || {};
+  if (c.VIDEO_URL) {
+    const v = document.getElementById('video');
+    v.innerHTML = /\.(mp4|webm)$/i.test(c.VIDEO_URL)
+      ? `<video src="${c.VIDEO_URL}" controls></video>`
+      : `<iframe src="${c.VIDEO_URL}" title="ELAW demo-video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  }
+  if (c.PROTOTYPE_URL) {
+    document.getElementById('proto').innerHTML = `<a class="btn btn-primary" href="${c.PROTOTYPE_URL}" target="_blank" rel="noopener">Prototipni ochish ↗</a>`;
+  }
+</script>
+  <script src="../js/icons.js"></script>
+</body>
+</html>

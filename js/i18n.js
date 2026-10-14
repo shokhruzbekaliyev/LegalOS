@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Localization & Translation System (i18n)
+   ELAW Uzbekistan - Localization & Translation System (i18n)
    Languages: Uzbek (uz - Default) and Russian (ru)
    English removed per user requirement.
    ========================================================================== */
@@ -7,13 +7,13 @@
 const I18N_DICTIONARY = {
   uz: {
     // Brand & Common
-    appName: "LegalOS",
+    appName: "ELAW",
     appSubtitle: "O‘zbekiston LegalTech • AI Platformasi",
     platformSubtitle: "O‘zbekiston LegalTech • AI Platformasi",
     zeroHallucination: "Zero-Hallucination Rejimi",
-    verifiedLexuz: "Lex.uz (100% Sinxron)",
-    syncStatus: "Lex.uz RAG: Sinxron",
-    activeStatus: "Lex.uz RAG: Faol",
+    verifiedLexuz: "Rasmiy manba (Sinxron)",
+    syncStatus: "Qonunlar RAG: Sinxron",
+    activeStatus: "Qonunlar RAG: Faol",
     courtRagStatus: "Sud Amaliyoti RAG: Faol",
     protectedStatus: "RBAC & Audit: Himoyalangan",
     companyProtectedStatus: "ABC Textile MCHJ: Himoyalangan",
@@ -24,7 +24,7 @@ const I18N_DICTIONARY = {
     logout: "Chiqish",
     active: "Faol",
     authButton: "Kirish / Kabinet",
-    searchPlaceholderGlobal: "Qonunlar (Lex.uz), moddalar, shartnomalar yoki case qidiruvi...",
+    searchPlaceholderGlobal: "Qonunlar, moddalar, shartnomalar yoki case qidiruvi...",
     searchPlaceholderCitizen: "Qonuniy savolingizni yozing...",
     searchPlaceholderLawyer: "Sud qarorlari, pretsedentlar, moddalar yoki case ID qidirish...",
     searchPlaceholderBusiness: "Shartnomalar, ichki siyosatlar yoki xavflarni qidirish...",
@@ -47,13 +47,13 @@ const I18N_DICTIONARY = {
 
     // Auth & Login (login.html)
     leftBannerTagline: "O‘zbekiston LegalTech • AI Platformasi",
-    leftBannerHeading: "Yuridik ishlaringizni LegalOS bilan tezlashtiring",
+    leftBannerHeading: "Yuridik ishlaringizni ELAW bilan tezlashtiring",
     leftBannerDesc: "Savoldan — hujjatga. Hujjatdan — case’ga. Case’dan — proaktiv compliance va real yuristgacha bo‘lgan to‘liq yuridik operatsion tizim.",
     partnersLabel: "Rasmiy Manbalar va Integratsiyalar",
     getStartedTitle: "Tizimga Kirish",
     createAccountTitle: "Ro‘yxatdan O‘tish",
     getStartedSubtitle: "Davom etish uchun hisobingizga kiring.",
-    createAccountSubtitle: "Yangi hisob yarating va LegalOS imkoniyatlaridan foydalaning.",
+    createAccountSubtitle: "Yangi hisob yarating va ELAW imkoniyatlaridan foydalaning.",
     selectRoleLabel: "Foydalanuvchi Roli (Tanlang):",
     nameLabel: "Ism-familiya / Tashkilot nomi",
     namePlaceholder: "Ismingiz yoki kompaniya nomini kiriting...",
@@ -78,11 +78,11 @@ const I18N_DICTIONARY = {
     // Landing Page (index.html)
     heroBadge: "✨ O‘zbekistonning Birinchi Milliy Yuridik AI Operatsion Tizimi",
     heroTitle: "Yuridik jarayonlaringizni Sun’iy Intellekt bilan yangi bosqichga olib chiqing",
-    heroSubtitle: "Lex.uz qonunchiligi bilan 100% sinxronlashgan, shartnomalardagi xatarlarni aniqlovchi va sud amaliyotini simulyatsiya qiluvchi milliy platforma.",
+    heroSubtitle: "Rasmiy qonunchilik bilan sinxronlashgan, shartnomalardagi xatarlarni aniqlovchi va sud amaliyotini simulyatsiya qiluvchi milliy platforma.",
     btnGetStarted: "🚀 Bepul Boshlash",
     btnLiveDemo: "⚡ Jonli Demo Ko‘rish",
-    statSync: "100% Sinxron",
-    statSyncDesc: "Lex.uz milliy qonunchilik bazasi",
+    statSync: "Sinxron",
+    statSyncDesc: "Milliy qonunchilik bazasi",
     statRisk: "Zero-Risk",
     statRiskDesc: "Shartnoma xatarlarini oldini olish",
     statAccuracy: "100% Aniqlik",
@@ -91,7 +91,7 @@ const I18N_DICTIONARY = {
     statPortalsDesc: "Fuqaro, Yurist, Biznes, Admin",
     
     portalsSectionTitle: "Kimlar Uchun Mo‘ljallangan?",
-    portalsSectionSubtitle: "LegalOS jamiyatning barcha qatlamlari — oddiy fuqarolardan tortib yirik korxonalargacha mo‘ljallangan.",
+    portalsSectionSubtitle: "ELAW jamiyatning barcha qatlamlari — oddiy fuqarolardan tortib yirik korxonalargacha mo‘ljallangan.",
     portalCardCitizenTitle: "Fuqarolar Uchun",
     portalCardCitizenDesc: "Kundalik shaxsiy huquqiy savollarga sodda tushuntirishlar, tayyor ariza va da'vo shablonlari hamda professional yurist topish.",
     portalCardCitizenAction: "Fuqaro Portaliga Kirish →",
@@ -109,7 +109,7 @@ const I18N_DICTIONARY = {
     featuresSectionSubtitle: "Zamonaviy LLM va O‘zbekiston qonunchilik korpusining mukammal uyg‘unligi.",
     featRedlineTitle: "Avtomatik Redline Tahlili",
     featRedlineDesc: "Shartnomalardagi nomutanosib penya, bir tomonlama xavfli bandlar va yashirin majburiyatlarni 3 soniyada aniqlaydi.",
-    featVerifierTitle: "Lex.uz Verifier AI",
+    featVerifierTitle: "Verifier AI",
     featVerifierDesc: "Har bir tavsiya va javob O‘zbekiston Respublikasi Kodekslari va qonunlari moddasiga 100% asoslanadi.",
     featCourtTitle: "Sud Strategiyasi Simulyatori",
     featCourtDesc: "Ish bo‘yicha Oliy Sud va iqtisodiy sudlar amaliyotini tahlil qilib, sudda g‘alaba qozonish ehtimolini hisoblaydi.",
@@ -117,7 +117,7 @@ const I18N_DICTIONARY = {
     featComplianceDesc: "Qonunchilikda yangilik bo‘lsa, u sizning qaysi shartnomangizga yoki siyosatingizga ta'sir qilishini avtomat ogohlantiradi.",
     
     ctaBannerTitle: "Yuridik xatarlardan himoyalanishni bugunoq boshlang",
-    ctaBannerSubtitle: "LegalOS orqali shartnomalaringizni tekshiring va huquqlaringizni kafolatlang.",
+    ctaBannerSubtitle: "ELAW orqali shartnomalaringizni tekshiring va huquqlaringizni kafolatlang.",
     navFeatures: "Xizmatlar",
     navAudience: "Kimlar uchun",
     navSecurity: "Xavfsizlik",
@@ -150,7 +150,7 @@ const I18N_DICTIONARY = {
     orchestratorLabel: "Orkestr:",
     agentCivil: "📘 Umumiy Huquq",
     agentContracts: "📑 Shartnomalar",
-    agentVerifier: "✓ Lex.uz Tekshiruvchi",
+    agentVerifier: "✓ Tekshiruvchi",
     sendBtn: "Yuborish",
     chatInputPlaceholder: "O‘zbekiston qonunchiligi bo‘yicha savolingizni yozing yoki modda qidiring...",
     prompt1: "⚠️ 50% jarima bandi qonuniymi?",
@@ -205,7 +205,7 @@ const I18N_DICTIONARY = {
 
     // Compliance
     complianceTitle: "Proaktiv Compliance Tizimi",
-    complianceSubtitle: "Foydalanuvchi so‘rashini kutmaydi — Lex.uz qonun o‘zgarishlarini kompaniya shartnomalariga avtomatik bog‘laydi.",
+    complianceSubtitle: "Foydalanuvchi so‘rashini kutmaydi — Rasmiy qonun o‘zgarishlarini kompaniya shartnomalariga avtomatik bog‘laydi.",
     btnUpdateAllContracts: "Barcha Ta’sirlangan Shartnomalarni Yangilash",
     tableThAsset: "Ta’sirlangan Aktiv / Hujjat",
     tableThType: "Hujjat Turi",
@@ -227,7 +227,7 @@ const I18N_DICTIONARY = {
     freeModeTitle: "Bepul Rejim",
     freeModeDesc: "Sizda 15 ta bepul savol va ariza generatsiyasi mavjud.",
     templatesTitle: "Tayyor Ariza va Shablonlar Generatori",
-    templatesSubtitle: "Bir necha savolga javob bering — LegalOS avtomatik ravishda tayyor huquqiy ariza shakllantiradi.",
+    templatesSubtitle: "Bir necha savolga javob bering — ELAW avtomatik ravishda tayyor huquqiy ariza shakllantiradi.",
     findLawyerTitle: "Professional Yurist Topish va Bog‘lanish",
     findLawyerSubtitle: "Agar sizga sudga vakil yoki yozma xulosa kerak bo‘lsa, tajribali mutaxassisni tanlang.",
     myDocumentsTitle: "Mening Hujjatlarim va Yozishmalarim",
@@ -240,7 +240,7 @@ const I18N_DICTIONARY = {
     navAdminDashboard: "Umumiy Boshqaruv (Dashboard)",
     navAdminUsers: "Foydalanuvchilar & RBAC",
     navAdminLawyers: "Yuristlar Moderatsiyasi",
-    navAdminLexSync: "Lex.uz & RAG Sinxronlash",
+    navAdminLexSync: "Qonunlar & RAG Sinxronlash",
     navAdminAiModels: "AI Modellari & Tokenlar",
     navAdminAudit: "Xavfsizlik & Audit Loglar",
     navAdminBilling: "Tariflar & Tushumlar",
@@ -257,28 +257,28 @@ const I18N_DICTIONARY = {
     auditLogsTitle: "Tizim Auditi va Xavfsizlik Jurnali (Audit Trail)",
     auditLogsSubtitle: "Kompaniyadagi har bir huquqiy harakat va AI tahlili qat’iy qayd etiladi.",
     billingTitle: "Tariflar va Obuna (Billing)",
-    billingSubtitle: "Kompaniyangiz LegalOS platformasida Business Plan tarifida ishlamoqda.",
+    billingSubtitle: "Kompaniyangiz ELAW platformasida Business Plan tarifida ishlamoqda.",
     apiTitle: "Tashqi Tizimlar bilan API Integratsiyasi",
-    apiSubtitle: "1C Buxgalteriya, HRM yoki korporativ ERP tizimingizga LegalOS yuridik aqlini to‘g‘ridan-to‘g‘ri ulang.",
+    apiSubtitle: "1C Buxgalteriya, HRM yoki korporativ ERP tizimingizga ELAW yuridik aqlini to‘g‘ridan-to‘g‘ri ulang.",
 
     // Citation Drawer
-    drawerOfficialLex: "Rasmiy Lex.uz Manbasi",
+    drawerOfficialLex: "Rasmiy Manba",
     drawerSourceDoc: "Manba Hujjati:",
     drawerArticleOfficial: "Modda Matni (Rasmiy Tahrir):",
-    drawerVerifiedWith: "Lex.uz bilan solishtirildi",
-    drawerOpenLex: "Lex.uz da Ochish ↗",
+    drawerVerifiedWith: "Rasmiy manba bilan solishtirildi",
+    drawerOpenLex: "Manbani Ochish ↗",
     closeBtn: "Yopish"
   },
 
   ru: {
     // Brand & Common
-    appName: "LegalOS",
+    appName: "ELAW",
     appSubtitle: "LegalTech • ИИ Узбекистана",
     platformSubtitle: "Платформа LegalTech • ИИ Узбекистана",
     zeroHallucination: "Режим Без Галлюцинаций",
-    verifiedLexuz: "Lex.uz (100% Синхронизация)",
-    syncStatus: "Lex.uz RAG: Синхронно",
-    activeStatus: "Lex.uz RAG: Активен",
+    verifiedLexuz: "Официальный источник (Синхронно)",
+    syncStatus: "Qonunlar RAG: Синхронно",
+    activeStatus: "Qonunlar RAG: Активен",
     courtRagStatus: "RAG Судебной Практики: Активен",
     protectedStatus: "RBAC & Аудит: Защищено",
     companyProtectedStatus: "ООО ABC Textile: Защищено",
@@ -289,7 +289,7 @@ const I18N_DICTIONARY = {
     logout: "Выйти",
     active: "Активен",
     authButton: "Вход / Кабинет",
-    searchPlaceholderGlobal: "Поиск законов (Lex.uz), статей, договоров или дел...",
+    searchPlaceholderGlobal: "Поиск законов, статей, договоров или дел...",
     searchPlaceholderCitizen: "Напишите ваш правовой вопрос...",
     searchPlaceholderLawyer: "Поиск судебных решений, прецедентов, статей или дел...",
     searchPlaceholderBusiness: "Поиск договоров, внутренних регламентов или рисков...",
@@ -312,13 +312,13 @@ const I18N_DICTIONARY = {
 
     // Auth & Login (login.html)
     leftBannerTagline: "Платформа LegalTech • ИИ Узбекистана",
-    leftBannerHeading: "Ускорьте вашу юридическую работу с LegalOS",
+    leftBannerHeading: "Ускорьте вашу юридическую работу с ELAW",
     leftBannerDesc: "От вопроса — к документу. От документа — к делу. От дела — к проактивному комплаенсу и реальному юристу в единой ОС.",
     partnersLabel: "Официальные Источники и Интеграции",
     getStartedTitle: "Вход в Систему",
     createAccountTitle: "Регистрация",
     getStartedSubtitle: "Пожалуйста, войдите в аккаунт для продолжения.",
-    createAccountSubtitle: "Создайте аккаунт и начните работу в LegalOS.",
+    createAccountSubtitle: "Создайте аккаунт и начните работу в ELAW.",
     selectRoleLabel: "Роль Пользователя (Выберите):",
     nameLabel: "ФИО / Название организации",
     namePlaceholder: "Введите ваше имя или компанию...",
@@ -343,11 +343,11 @@ const I18N_DICTIONARY = {
     // Landing Page (index.html)
     heroBadge: "✨ Первая в Узбекистане Национальная Юридическая ИИ Операционная Система",
     heroTitle: "Выведите юридические процессы на новый уровень с Искусственным Интеллектом",
-    heroSubtitle: "Национальная правовая платформа, синхронизированная с Lex.uz, анализирующая риски в договорах и симулирующая судебную практику.",
+    heroSubtitle: "Национальная правовая платформа, синхронизированная с официальной базой, анализирующая риски в договорах и симулирующая судебную практику.",
     btnGetStarted: "🚀 Начать Бесплатно",
     btnLiveDemo: "⚡ Смотреть Демо",
     statSync: "100% Синхронизация",
-    statSyncDesc: "Законодательная база Lex.uz",
+    statSyncDesc: "Законодательная база",
     statRisk: "Zero-Risk",
     statRiskDesc: "Предотвращение рисков в договорах",
     statAccuracy: "100% Точность",
@@ -355,7 +355,7 @@ const I18N_DICTIONARY = {
     statPortals: "4 Портала",
     statPortalsDesc: "Гражданин, Юрист, Бизнес, Админ",
     
-    portalsSectionTitle: "Для Кого Создан LegalOS?",
+    portalsSectionTitle: "Для Кого Создан ELAW?",
     portalsSectionSubtitle: "Решения для всех категорий пользователей — от граждан до крупных корпораций.",
     portalCardCitizenTitle: "Для Граждан",
     portalCardCitizenDesc: "Ответы на бытовые правовые вопросы простым языком, готовые шаблоны заявлений и поиск проверенных юристов.",
@@ -374,7 +374,7 @@ const I18N_DICTIONARY = {
     featuresSectionSubtitle: "Идеальная синергия передовых языковых моделей и правового корпуса Узбекистана.",
     featRedlineTitle: "Автоматический Redline Анализ",
     featRedlineDesc: "Выявляет скрытые штрафы, несоразмерную ответственность и кабальные условия за 3 секунды.",
-    featVerifierTitle: "Верификатор Lex.uz",
+    featVerifierTitle: "Верификатор",
     featVerifierDesc: "Каждая рекомендация подкреплена ссылкой на конкретную действующую статью Кодексов РУз.",
     featCourtTitle: "Симулятор Судебной Стратегии",
     featCourtDesc: "Анализирует судебную практику Верховного Суда и оценивает шансы на победу по вашему делу.",
@@ -382,7 +382,7 @@ const I18N_DICTIONARY = {
     featComplianceDesc: "Автоматически предупреждает, какие контракты требуют правок при выходе новых законов.",
     
     ctaBannerTitle: "Защитите свой бизнес и права уже сегодня",
-    ctaBannerSubtitle: "Проверьте договоры и исключите юридические риски вместе с LegalOS.",
+    ctaBannerSubtitle: "Проверьте договоры и исключите юридические риски вместе с ELAW.",
     navFeatures: "Возможности",
     navAudience: "Для кого",
     navSecurity: "Безопасность",
@@ -415,7 +415,7 @@ const I18N_DICTIONARY = {
     orchestratorLabel: "Оркестр:",
     agentCivil: "📘 Гражданское Право",
     agentContracts: "📑 Договоры",
-    agentVerifier: "✓ Проверка Lex.uz",
+    agentVerifier: "✓ Проверка",
     sendBtn: "Отправить",
     chatInputPlaceholder: "Задайте вопрос по законам Узбекистана или укажите статью...",
     prompt1: "⚠️ Законна ли неустойка 50%?",
@@ -470,7 +470,7 @@ const I18N_DICTIONARY = {
 
     // Compliance
     complianceTitle: "Система Проактивного Комплаенса",
-    complianceSubtitle: "Не ждет запроса пользователя — связывает изменения Lex.uz с договорами компании в реальном времени.",
+    complianceSubtitle: "Не ждет запроса пользователя — связывает изменения законодательства с договорами компании в реальном времени.",
     btnUpdateAllContracts: "Обновить Все Затронутые Договоры",
     tableThAsset: "Затронутый Документ / Актив",
     tableThType: "Тип Документа",
@@ -492,7 +492,7 @@ const I18N_DICTIONARY = {
     freeModeTitle: "Бесплатный Режим",
     freeModeDesc: "Вам доступно 15 бесплатных вопросов и генераций заявлений.",
     templatesTitle: "Генератор Готовых Заявлений и Шаблонов",
-    templatesSubtitle: "Ответьте на несколько вопросов — LegalOS автоматически составит заявление.",
+    templatesSubtitle: "Ответьте на несколько вопросов — ELAW автоматически составит заявление.",
     findLawyerTitle: "Поиск и Связь с Юристом",
     findLawyerSubtitle: "Если вам требуется представитель в суде или заключение, выберите специалиста.",
     myDocumentsTitle: "Мои Документы и Запросы",
@@ -505,7 +505,7 @@ const I18N_DICTIONARY = {
     navAdminDashboard: "Общая Панель (Дашборд)",
     navAdminUsers: "Пользователи и RBAC",
     navAdminLawyers: "Модерация Юристов",
-    navAdminLexSync: "Синхронизация Lex.uz и RAG",
+    navAdminLexSync: "Синхронизация законов и RAG",
     navAdminAiModels: "ИИ Модели и Токены",
     navAdminAudit: "Безопасность и Аудит-лог",
     navAdminBilling: "Тарифы и Биллинг",
@@ -524,14 +524,14 @@ const I18N_DICTIONARY = {
     billingTitle: "Тарифы и Подписка (Billing)",
     billingSubtitle: "Ваша компания работает по тарифу Business Plan.",
     apiTitle: "API Интеграция с Внешними Системами",
-    apiSubtitle: "Подключите юридический интеллект LegalOS напрямую к 1С, HRM или ERP компании.",
+    apiSubtitle: "Подключите юридический интеллект ELAW напрямую к 1С, HRM или ERP компании.",
 
     // Citation Drawer
-    drawerOfficialLex: "Официальный Источник Lex.uz",
+    drawerOfficialLex: "Официальный Источник",
     drawerSourceDoc: "Документ-источник:",
     drawerArticleOfficial: "Текст Статьи (Официальная Редакция):",
-    drawerVerifiedWith: "Сверено с базой Lex.uz",
-    drawerOpenLex: "Открыть на Lex.uz ↗",
+    drawerVerifiedWith: "Сверено с официальной базой",
+    drawerOpenLex: "Открыть источник ↗",
     closeBtn: "Закрыть"
   }
 };

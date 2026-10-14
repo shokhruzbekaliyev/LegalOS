@@ -1,10 +1,10 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Mock Legal Data & Datasets
+   ELAW Uzbekistan - Mock Legal Data & Datasets
    All data structured for Spring Boot Backend & FastAPI Agent ingestion
    ========================================================================== */
 
 const LegalData = {
-  // 1. Lex.uz Articles & Citation Database
+  // 1. rasmiy manba Articles & Citation Database
   citations: {
     "FK-333": {
       code: "FK 333-modda",
@@ -128,7 +128,7 @@ const LegalData = {
     active: true,
     title: "Soliq qonunchiligida o‘zgarish aniqlandi",
     category: "Soliq va buxgalteriya",
-    source: "Lex.uz (O‘zR Qonuni № O‘RQ-954)",
+    source: "rasmiy manba (O‘zR Qonuni № O‘RQ-954)",
     dateDetected: "2026-09-28 22:40",
     summary: "2026-yil 1-oktyabrdan boshlab korxonalar o‘rtasida xizmat ko‘rsatish shartnomalarida elektron hisob-faktura (EHF) va fiskal rekvizitlarni kiritish majburiy tartibga aylandi.",
     impactSummary: "Ta’sir: 14 ta shartnoma • 1 ta Ichki hisob siyosati • 3 ta HR shablon",

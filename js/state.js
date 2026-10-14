@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LegalOS Uzbekistan - Application Reactive State Management
+   ELAW Uzbekistan - Application Reactive State Management
    ========================================================================== */
 
 class AppState {
@@ -13,7 +13,7 @@ class AppState {
     this.impactDrawerOpen = false;
     this.listeners = [];
 
-    // Preloaded chat messages demonstrating LegalOS capability
+    // Preloaded chat messages demonstrating ELAW capability
     this.chatMessages = [
       {
         id: "msg-1",
@@ -35,7 +35,7 @@ Asosiy xulosalar:
         citations: ["FK-333"],
         verifierStamp: {
           verified: true,
-          source: "Lex.uz (Fuqarolik Kodeksi 333-modda)",
+          source: "rasmiy manba (Fuqarolik Kodeksi 333-modda)",
           hash: "VER-98421-UZ"
         },
         hasContractAction: true
@@ -138,7 +138,7 @@ Asosiy xulosalar:
         citations: citations,
         verifierStamp: {
           verified: true,
-          source: "Lex.uz bazasi bilan solishtirildi",
+          source: "Rasmiy qonunlar bazasi bilan solishtirildi",
           hash: "VER-" + Math.floor(10000 + Math.random() * 90000) + "-UZ"
         }
       });
